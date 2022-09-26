@@ -1,10 +1,10 @@
-$(document).ready(function() {
-	$(".item-list li").mouseenter(function(){  
+jQuery(document).ready(function() {
+	jQuery(".item-list li").mouseenter(function(){  
         $(this).find($('.item-list .hover')).stop(true, true).fadeIn(600);
         return false;
      });
-      $('.item-list li').mouseleave(function(){  
-        $(this).find($('.item-list .hover')).stop(true, true).fadeOut(400);
+      jQuery('.item-list li').mouseleave(function(){  
+        jQuery(this).find($('.item-list .hover')).stop(true, true).fadeOut(400);
         return false;
      });
       jQuery(document).on('click', ".menu_trigger", function (e) {
@@ -29,7 +29,7 @@ $(document).ready(function() {
         return false;
     });
 // begin add	
-	var $container = $('#container');
+	var $container = jQuery('#container');
 	// init
 	$container.isotope({
 		// options
@@ -41,13 +41,13 @@ $(document).ready(function() {
 		}
 		});
 		
-	$('#filters').on( 'click', 'li', function() {
-		var filterValue = $(this).attr('data-filter');
+	jQuery('#filters').on( 'click', 'li', function() {
+		var filterValue = jQuery(this).attr('data-filter');
 		$container.isotope({ filter: filterValue });
-		$( "#filters li" ).removeClass("active");
-		$(this).addClass("active");
+		jQuery( "#filters li" ).removeClass("active");
+		jQuery(this).addClass("active");
 	});
-	$('.fancybox').fancybox({
+	jQuery('.fancybox').fancybox({
 	  helpers: {
 	    overlay: {
 	      locked: false
@@ -56,15 +56,15 @@ $(document).ready(function() {
 	});
 // end add	
 }); 
-$(window).resize(function() {
-    if($(document).width() > 768){
-      $( "#nav" ).addClass("active");
-      $( "#nav ul" ).attr('style','');
-      $( "#nav" ).attr('style','');
-      $( "#nav" ).removeClass("clicked");
-      $( "#nav .active" ).removeClass('active');
+jQuery(window).resize(function() {
+    if(jQuery(document).width() > 768){
+      jQuery( "#nav" ).addClass("active");
+      jQuery( "#nav ul" ).attr('style','');
+      jQuery( "#nav" ).attr('style','');
+      jQuery( "#nav" ).removeClass("clicked");
+      jQuery( "#nav .active" ).removeClass('active');
     }
     else {
-        $( "#nav" ).removeClass("active");
+        jQuery( "#nav" ).removeClass("active");
     }
 });

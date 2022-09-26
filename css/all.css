@@ -283,7 +283,7 @@ a:hover {
 .menu_trigger {
 	width: 31px;
 	height: 31px;
-	right: 0;
+	right: 10px;
 	background: url(../images/btn_mobile_menu.png) no-repeat;
 	text-indent: -9999em;
 	display: none;
