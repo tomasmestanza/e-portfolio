@@ -273,6 +273,11 @@ a:hover {
 	color: #46484c;
 }
 
+
+.wrapper-holder.white .box_contact span{
+	color: #46484c;
+}
+
 #header {
 	max-width: 1170px;
 	margin: 0 auto;
