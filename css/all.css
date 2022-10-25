@@ -383,6 +383,24 @@ h2.slogan {
 	margin: 0 0 81px;
 }
 
+#main h3.normal-h3{
+	font-size: 24px;
+	line-height: 26px;
+	margin: 0 0 20px;
+	color: #46484c;
+}
+
+#main ul.list{
+	color: #46484c;
+	margin-left: 20px;
+	margin-bottom:20px;
+}
+
+#main ul.list li{
+	margin-bottom:10px;
+	list-style:circle!important;
+}
+
 .box_timeline_holder {
 	background: url(../images/bg_timeline_l.png) no-repeat 0 70px;
 	position: relative;
