@@ -397,6 +397,14 @@ h2.slogan {
 	color: #46484c;
 }
 
+#main h3.bold-h3 {
+	font-size: 24px;
+	line-height: 26px;
+	margin: 0 0 20px;
+	color: #46484c;
+	font-weight: bold;
+}
+
 #main ul.list {
 	color: #46484c;
 	margin-left: 20px;
@@ -959,6 +967,14 @@ h2.slogan {
 	display: none;
 }
 
+
+.code-wrapper {
+	color: #63666a;
+	font-family: 'Courier New', Courier, monospace;
+	border: 1px solid #63666a;
+	padding: 20px;
+}
+
 /* end add	 */
 
 @media (-webkit-min-device-pixel-ratio:2),
@@ -1084,4 +1100,8 @@ h2.slogan {
 	}
 
 	/* end add	 */
+}
+
+.center {
+	text-align: center;
 }
