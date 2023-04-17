@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]> <html class="oldie" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Tomas Mestanza</title>
+    <link rel="stylesheet" href="/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/screen.css" />
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div id="wrapper" class="inner">
+        <div class="wrapper-holder">
+            <header id="header">
+                <a class="menu_trigger" href="#">menu</a>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+
+
+                        <li><a href="/Contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="wrapper-holder white">
+            <section id="main">
+                <a class="breadcrums" href="index.html">Object Oriented Information Systems</a>
+                <h2>Testing Code in Practice</h2>
+
+
+                <div class="skills_holder">
+                    <h3 class="bold-h3">Seminar activity 1
+                    </h3>
+                    <p>
+                        Run the following code using pylint and identify the errors.
+                    </p>
+                    <div class="code-wrapper">
+                        <code>
+
+                        def factorial (x)<br>
+                        &nbsp;&nbsp;&nbsp;if x == 1:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 1<br><br>
+                        
+                        &nbsp;&nbsp;&nbsp;else:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (x * factorial(x-1))<br><br>
+                        
+                        num = 3<br>
+                        print("The factorial of", num, "is", factorial(num))  
+
+
+                        </code>
+                    </div>
+                    <p><br><br><strong>Pylint results</strong>
+                        <br>
+                        E0001: expected ':' (<unknown>, line 1) (syntax-error)
+                            <br><br>
+                            Pylint reports an error with the semicolon missing at the end of the first line.
+                    </p>
+                </div>
+
+                <div class="skills_holder">
+                    <hr>
+                </div>
+
+                <div class="skills_holder">
+                    <h3 class="bold-h3">Seminar activity 2
+                    </h3>
+                    <p>
+                        In ‘Packaging & Testing’ (unit 9), we examined the use of documentation to support code
+                        developments. Add appropriate commenting and documentation for the code below.
+                    </p>
+                    <div class="code-wrapper">
+                        <code>
+                            def add(x, y): <br>
+                            return x + y <br>
+                            def subtract(x, y): <br>
+                            return x - y <br>
+                            def multiply(x, y): <br>
+                            return x * y <br>
+                            def divide(x, y): <br>
+                            return x / y <br>
+                            print("Select operation.") <br>
+                            print("1.Add") <br>
+                            print("2.Subtract") <br>
+                            print("3.Multiply") <br>
+                            print("4.Divide") <br>
+                            while True: <br>
+                            choice = input("Enter choice(1/2/3/4): ")  <br>
+                            if choice in ('1', '2', '3', '4'): <br>
+                            num1 = float(input("Enter first number: ")) <br>
+                            num2 = float(input("Enter second number: ")) <br>
+                            if choice == '1': print(num1, "+", num2, "=", add(num1, num2)) <br>
+                            elif choice == '2': print(num1, "-", num2, "=", subtract(num1, num2)) <br>
+                            elif choice == '3': print(num1, "*", num2, "=", multiply(num1, num2)) <br>
+                            elif choice == '4': print(num1, "/", num2, "=", divide(num1, num2)) <br>
+                            break the while loop if answer is no next_calculation = input("Let's do next calculation? (yes/no): ") <br>
+                            if next_calculation == "no": <br>
+                            break <br>
+                            else: print("Invalid Input")<br><br>
+
+                            <strong># Formatting and adding comments and documentation</strong><br><br>
+
+                            def add(x, y):<br>
+                            &nbsp;&nbsp;&nbsp;'''Adds up x and y and returns the result'''<br>
+                            &nbsp;&nbsp;&nbsp;return x + y<br><br>
+
+
+                            def subtract(x, y):<br>
+                            &nbsp;&nbsp;&nbsp;'''Substracts y from x and returns the result'''<br>
+                            &nbsp;&nbsp;&nbsp;return x - y<br><br>
+
+
+                            def multiply(x, y):<br>
+                            &nbsp;&nbsp;&nbsp;'''Multiplies x and y and returns the result'''<br>
+                            &nbsp;&nbsp;&nbsp;return x * y<br><br>
+
+
+                            def divide(x, y):<br>
+                            &nbsp;&nbsp;&nbsp;'''Divides x by y and returns the result'''<br>
+                            &nbsp;&nbsp;&nbsp;return x / y<br><br>
+
+
+                            # prints the options<br>
+                            print("Select operation.")<br>
+                            print("1.Add")<br>
+                            print("2.Subtract")<br>
+                            print("3.Multiply")<br>
+                            print("4.Divide")<br><br>
+
+                            # Menu control<br>
+                            while True:<br>
+                            &nbsp;&nbsp;&nbsp;choice = input("Enter choice(1/2/3/4): ")<br>
+                            &nbsp;&nbsp;&nbsp;if choice in ('1', '2', '3', '4'):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num1 = float(input("Enter first number: "))<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num2 = float(input("Enter second number: "))<br>
+
+                            &nbsp;&nbsp;&nbsp;if choice == '1':<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(num1, "+", num2, "=", add(num1, num2))<br>
+                            &nbsp;&nbsp;&nbsp;elif choice == '2':<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(num1, "-", num2, "=", subtract(num1, num2))<br>
+                            &nbsp;&nbsp;&nbsp;elif choice == '3':<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(num1, "*", num2, "=", multiply(num1, num2))<br>
+                            &nbsp;&nbsp;&nbsp;elif choice == '4':<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(num1, "/", num2, "=", divide(num1, num2))<br>
+                            
+                            &nbsp;&nbsp;&nbsp;#breaks the while loop if answer is no<br>
+                            &nbsp;&nbsp;&nbsp;next_calculation = input("Let's do next calculation? (yes/no): ")<br>
+                            &nbsp;&nbsp;&nbsp;if next_calculation == "no":<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br>
+                            &nbsp;&nbsp;&nbsp;print("Invalid Input")<br>
+
+                        </code>
+                    </div>
+
+                </div>
+
+                <div class="skills_holder">
+                    <hr>
+                </div>
+
+                <div class="skills_holder">
+
+                    <h3 class="bold-h3">Seminar activity 3
+                    </h3>
+
+                    <p>
+                        <strong>Read the article by Rani et al. (2021). What impact does this article have on the way in
+                            which
+                            you have commented the code in the task above?</strong>
+                    </p>
+                    <p>
+                        Rani et al. (2021) state that most guidelines for commenting do not cover the same aspects and
+                        assess the content of the comments rather than the syntax and format. Consistency impacts what
+                        developers prioritise when writing comments.
+                    </p>
+                    <p>After reading the article, we can see the differences between commenting practices and aim to
+                        correct the comments previously added in activity 2. We kept the documentation and comments
+                        consistent in terms of syntax. For example, the third person is used throughout the code. This
+                        is very important because, as the article mentions, developers use the comments to understand
+                        the code more than any other type of documentation.</p>
+
+
+                    <p><strong>References</strong><br>
+                        Rani, P. , Abukar, S. , Stulova, N., Bergel, A., Nierstrasz, O. (2021) Do Comments follow
+                        Commenting Conventions? A Case Study in Java and Python. IEEE 21st International Working
+                        Conference on Source Code Analysis and Manipulation (SCAM). IEEE, 165–169. DOI:
+                        https://doi.org/10.48550/arXiv.2108.10766
+                    </p>
+
+                </div>
+
+
+            </section>
+        </div>
+        <footer id="footer" class="grey">
+            <div class="footer-content">
+                <ul class="social">
+                    <li class="email"><a href="#">Email</a></li>
+                    <li class="facebook"><a href="#">Facebook</a></li>
+                    <li class="google"><a href="#">Google+</a></li>
+                    <li class="twitter"><a href="#">Twitter</a></li>
+                    <li class="pinterest"><a href="#">Pinterest</a></li>
+                </ul>
+                <p class="copy">Copyright 2022 Tomas Mestanza. All rights reserved. | Template by <a
+                        href="https://www.themezy.com" target="_blank">Themezy</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/cells-by-row.js"></script>
+    <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

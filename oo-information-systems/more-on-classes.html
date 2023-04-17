@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]> <html class="oldie" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Tomas Mestanza</title>
+    <link rel="stylesheet" href="/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/screen.css" />
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div id="wrapper" class="inner">
+        <div class="wrapper-holder">
+            <header id="header">
+                <a class="menu_trigger" href="#">menu</a>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+
+
+                        <li><a href="/Contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="wrapper-holder white">
+            <section id="main">
+                <a class="breadcrums" href="index.html">Object Oriented Information Systems</a>
+                <h2>More on Classes</h2>
+                <p>In this unit we cover Inheritance, Abstraction, and Polymorphism.</p>
+
+                <div class="skills_holder">
+                    <h3 class="bold-h3">As an exercise, write an __lt__ method for Time objects. You can use tuple
+                        comparison, but you also might consider comparing integers.
+                    </h3>
+
+                    <div class="code-wrapper">
+                        <code>
+
+                            class Time:<br>
+                            &nbsp;&nbsp;&nbsp;pass<br><br>
+
+                            &nbsp;&nbsp;&nbsp;def __init__(self, hour, minute, second):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.hour = hour<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.minute = minute<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.second = second<br><br>
+
+                            &nbsp;&nbsp;&nbsp;def __lt__(self, other):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t1 = self.hour, self.minute, self.second<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t2 = other.hour, other.minute, other.second<br><br>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return t1 < t2<br><br>
+
+                            obj_time1 = Time(10, 29, 56)<br>
+                            obj_time2 = Time(11, 29, 57)<br><br>
+
+                            print(obj_time1 > obj_time2)<br>
+
+                        </code>
+                    </div>
+
+                </div>
+
+                <div class="skills_holder">
+                    <hr>
+                </div>
+
+                <div class="skills_holder">
+
+                    <h3 class="bold-h3">Write a Python program with polymorphism that is usable within the summative
+                        assessment for the driverless car.
+                    </h3>
+                    <p>The LIDAR and the RADAR are sensors that calculate the distance from the driverless car to
+                        surrounding objects. The main difference between them is that the first uses laser rays, and the
+                        second uses radio waves.</p>
+
+                    <div class="code-wrapper">
+                        <code>
+                            class Seeder():<br>
+                            &nbsp;&nbsp;&nbsp;objects_seeds = ['car', 'person', 'wall']<br>
+                            &nbsp;&nbsp;&nbsp;distances_seeds = range(3, 15)<br>
+                            &nbsp;&nbsp;&nbsp;object_list = []<br><br>
+
+                            &nbsp;&nbsp;&nbsp;def __init__(self, n):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for n in range(n):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.object_list.append([<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;random.choice(self.distances_seeds),<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;random.choice(self.objects_seeds)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;])<br><br>
+
+
+                            class LIDAR():<br>
+                            &nbsp;&nbsp;&nbsp;# The objects within the car environment<br><br>
+
+                            &nbsp;&nbsp;&nbsp;current_object_list = []<br><br>
+
+                            &nbsp;&nbsp;&nbsp;def __init__(self, frequency, wavelength):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.frequency = frequency<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.wavelength = wavelength<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.objects = Seeder(10)<br><br>
+
+                            &nbsp;&nbsp;&nbsp;# We require a list of current objects<br>
+                            &nbsp;&nbsp;&nbsp;def read_objects(self):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;random.shuffle(self.objects)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return random.sample(self.objects, 3)<br><br>
+
+
+                            class RADAR():<br>
+                            &nbsp;&nbsp;&nbsp;# The objects within the car environment<br><br>
+
+                            &nbsp;&nbsp;&nbsp;current_object_list = []<br><br>
+
+                            &nbsp;&nbsp;&nbsp;def __init__(self, frequency, range):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.frequency = frequency<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.range = range<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.objects = Seeder(10)<br><br>
+
+                            &nbsp;&nbsp;&nbsp;# We require a list of current objects<br>
+                            &nbsp;&nbsp;&nbsp;def read_objects(self):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;random.shuffle(self.objects)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return random.sample(self.objects, 3)
+                        </code>
+                    </div>
+                    <br><br>
+                    <p>The seeder class is used to generate a random list of objects. In the LIDAR and RADAR classes, a
+                        sublist of elements is selected randomly.</p>
+
+                </div>
+
+
+            </section>
+        </div>
+        <footer id="footer" class="grey">
+            <div class="footer-content">
+                <ul class="social">
+                    <li class="email"><a href="#">Email</a></li>
+                    <li class="facebook"><a href="#">Facebook</a></li>
+                    <li class="google"><a href="#">Google+</a></li>
+                    <li class="twitter"><a href="#">Twitter</a></li>
+                    <li class="pinterest"><a href="#">Pinterest</a></li>
+                </ul>
+                <p class="copy">Copyright 2022 Tomas Mestanza. All rights reserved. | Template by <a
+                        href="https://www.themezy.com" target="_blank">Themezy</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/cells-by-row.js"></script>
+    <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]> <html class="oldie" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Tomas Mestanza</title>
+    <link rel="stylesheet" href="/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/screen.css" />
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div id="wrapper" class="inner">
+        <div class="wrapper-holder">
+            <header id="header">
+                <a class="menu_trigger" href="#">menu</a>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+
+
+                        <li><a href="/Contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="wrapper-holder white">
+            <section id="main">
+                <a class="breadcrums" href="index.html">Object Oriented Information Systems</a>
+                <h2>Data Structures and Data Search in Practice</h2>
+                <div class="skills_holder">
+
+                    <h3 class="bold-h3">Making reference to the article by Fortino et al. (2015) Towards a Development
+                        Methodology for Smart
+                        Object-Oriented IoT Systems: a Metamodel
+                        Approach, consider the strengths
+                        and weaknesses of designing a metamodel to support object-oriented design of the IoT. Design a
+                        smart model equivalent to that presented in Figure 6 which would instead support operation of a
+                        driverless car.
+                    </h3>
+
+                    <p>
+                        Fortino et al. (2015) propose a methodology to support Object-oriented IoT systems based on
+                        metamodels which, according to the authors, are defined in different levels of abstraction. The
+                        approach considers the Smart Objects (SOs) to be the fundamental elements of the system to be
+                        designed. This way, focusing on supporting the SOs development phases of analysis, design, and
+                        implementation will produce a system with seamless interaction between human users and devices
+                        to
+                        benefit users and organisations.</p>
+
+                    <p>One of the advantages of basing the development phases of a SO in metamodels is that this
+                        approach
+                        provides an abstraction that can evolve and specialise through the development phases. This
+                        evolving
+                        and specialising can bring consistency to the development process.</p>
+
+                    <p>At the time this methodology was proposed, it was a novice approach which means that there was a
+                        risk of needing to be more easily adaptable to different types of systems. We also notice a
+                        level of
+                        complexity that could require specialisation of the parts involved in the methodology
+                        implementation.</p>
+
+                    <p><strong>References</strong><br>
+
+                        Fortino, G., Guerrieri, A., Russo, W. & Savaglio, C. (2015) Towards a Development Methodology
+                        for Smart Object-Oriented IoT Systems: A Metamodel Approach. 2015 IEEE International Conference
+                        on Systems, Man, and Cybernetics. 1297-1302. DOI: 10.1109/SMC.2015.231.</p>
+
+                </div>
+
+
+                <div class="skills_holder">
+
+                    <h3 class="bold-h3">Summary post on the article by Fortino et al. (2015) Towards a Development
+                        Methodology for Smart
+                        Object-Oriented IoT Systems: a Metamodel
+                        Approach
+                    </h3>
+                    <p>In my initial post, I stated that the complexity that metamodels bring to the process could be
+                        high
+                        and depending on the type of system to be developed, it can make them inapplicable.</p>
+
+                    <p>I agree with the fact that standards are an issue when it comes to the use of metamodel-based
+                        methodologies. However, the use of the existing standards is not expanded enough. Due to the
+                        complexity of developing an IoT product, this seems to be the problem rather than the absence of
+                        standards.</p>
+
+                    <p>References to adaptability have been made by some of my fellow students, but the proposed
+                        methodology has adaptive concepts included. This is considering that the proposed methodology is
+                        specific to IoT projects.</p>
+
+                    <p>UML was also mentioned as an alternative to metamodel-based methodologies. UML will undoubtedly
+                        result in more acceptance due to its simplicity and extended use.</p>
+
+                    <p>Overall, I agree with the benefits of using metamodel-based methodologies. Specifically to the
+                        proposed methodology, these benefits also derivate from the use of Object-oriented concepts.</p>
+
+
+                </div>
+
+
+                <div class="skills_holder">
+                    <hr>
+                </div>
+
+                <div class="skills_holder">
+                    <h3 class="bold-h3">Recursion exercises
+                    </h3>
+
+                    <div class="code-wrapper">
+                        <code>
+                            <strong># Adding up all number between 0 and n</strong><br><br>
+
+                            def recursive_sum(n):<br>
+                            &nbsp;&nbsp;&nbsp;if n == 0:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0<br>
+                            &nbsp;&nbsp;&nbsp;else:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return n + recursive_sum(n - 1)<br><br>
+
+
+                            # print(recursive_sum(10))<br><br><br>
+
+
+                            <strong># Adding up the elements of a list</strong><br><br>
+                            def list_sum(l):<br>
+                            &nbsp;&nbsp;&nbsp;if len(l) == 1:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return l[0]<br>
+                            &nbsp;&nbsp;&nbsp;else:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;last_item = l.pop(len(l) - 1)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return last_item + list_sum(l)<br><br>
+
+
+                            #print(list_sum([10, 12.5, 10, 7]))<br><br><br>
+
+                            <strong># Count the number of ears according to the number of bunnies</strong><br><br>
+                            def bunny_ears(n):<br>
+                            &nbsp;&nbsp;&nbsp;if n == 0:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0<br>
+                            &nbsp;&nbsp;&nbsp;else:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 2 + bunny_ears(n - 1)<br><br>
+
+                            # print(bunny_ears(45))<br><br><br>
+
+                            <strong># Invert the order of the string</strong><br><br>
+                            def reverse_string(s):<br>
+                            &nbsp;&nbsp;&nbsp;x = slice(1)<br>
+                            &nbsp;&nbsp;&nbsp;if len(s) == 0:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return ''<br>
+                            &nbsp;&nbsp;&nbsp;else:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return s[len(s) - 1] + reverse_string(s[:-1])<br><br>
+
+                            print(reverse_string('house'))
+
+                        </code>
+                    </div>
+
+                </div>
+
+
+            </section>
+        </div>
+        <footer id="footer" class="grey">
+            <div class="footer-content">
+                <ul class="social">
+                    <li class="email"><a href="#">Email</a></li>
+                    <li class="facebook"><a href="#">Facebook</a></li>
+                    <li class="google"><a href="#">Google+</a></li>
+                    <li class="twitter"><a href="#">Twitter</a></li>
+                    <li class="pinterest"><a href="#">Pinterest</a></li>
+                </ul>
+                <p class="copy">Copyright 2022 Tomas Mestanza. All rights reserved. | Template by <a
+                        href="https://www.themezy.com" target="_blank">Themezy</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/cells-by-row.js"></script>
+    <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

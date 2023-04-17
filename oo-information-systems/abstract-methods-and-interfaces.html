@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]> <html class="oldie" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Tomas Mestanza</title>
+    <link rel="stylesheet" href="/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/screen.css" />
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div id="wrapper" class="inner">
+        <div class="wrapper-holder">
+            <header id="header">
+                <a class="menu_trigger" href="#">menu</a>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+
+
+                        <li><a href="/Contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="wrapper-holder white">
+            <section id="main">
+                <a class="breadcrums" href="index.html">Object Oriented Information Systems</a>
+                <h2>Abstract methods and Interfaces</h2>
+
+
+                <div class="skills_holder">
+                    <h3 class="bold-h3">Develop a Python program which has three abstract methods and one subclass which
+                        allows a user to perform banking operations.
+                    </h3>
+
+                    <div class="code-wrapper">
+                        <code>
+
+                            from abc import ABC, abstractmethod
+
+                            class Account(ABC):<br>
+                            &nbsp;&nbsp;&nbsp;pass<br><br>
+
+                            &nbsp;&nbsp;&nbsp;def create_account(self):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pass<br>
+
+                            &nbsp;&nbsp;&nbsp;def calculate_balance(self):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pass<br>
+
+                            &nbsp;&nbsp;&nbsp;def pay_in(self):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pass<br><br>
+
+
+                            class Current(Account):<br>
+                            &nbsp;&nbsp;&nbsp;accounts = list()<br><br>
+
+                            &nbsp;&nbsp;&nbsp;def create_account(self, name, dob):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.accounts.append([name, dob, []])  # type, amount<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(self.accounts)<br><br>
+
+                            &nbsp;&nbsp;&nbsp;def calculate_balance(self, acc_number):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;balance = 0<br><br>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if self.accounts[acc_number][2]:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for tx in self.accounts[acc_number][2]:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if tx[0] == 1:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;balance += tx[1]<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;balance -= tx[1]<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0<br>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return balance<br><br>
+
+                            &nbsp;&nbsp;&nbsp;def add_transaction(self, acc_number, tx, amount=0):<br><br>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if self.accounts[acc_number][2]:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.accounts[acc_number][2].append([tx, amount])<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# define a lists of lists<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.accounts[acc_number][2] = [[tx, amount]]<br><br>
+
+                            &nbsp;&nbsp;&nbsp;def get_accounts(self):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.accounts<br><br>
+
+
+                            obj_Current = Current()<br><br>
+
+                            def main():<br><br>
+
+                            &nbsp;&nbsp;&nbsp;print("\n ENTER THE REQUIRED OPTION")<br><br>
+
+                            &nbsp;&nbsp;&nbsp;option = int(<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;input(" =========================================== \n \<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1: ADD A NEW ACCOUNT \n \<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2: ADD TRANSACTION \n \<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3: DELETE ACCOUNT \n \<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4: EXIT\n \<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Option: "))<br><br>
+
+                            &nbsp;&nbsp;&nbsp;if option == 1:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# First letter capitalised<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;surname = input("\n Enter the surname: ").strip().title()<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dob = input(" Enter DOB [dd/mm/yyyy]: ")  # DOB<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if surname and dob:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj_Current.create_account(surname, dob)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("\n Please provide the required information")<br><br>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main()<br><br>
+
+                            &nbsp;&nbsp;&nbsp;elif option == 2:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;account = int(input("\n Enter account number: "))<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;accounts = obj_Current.get_accounts()<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if len(accounts) > account:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tx = int(<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;input("\n Enter transaction type:\n \<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1: Credit\n \<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2: Debit\n\n : "))<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amount = float(input(" Enter amount: "))<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj_Current.add_transaction(account, tx, amount)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("\n Account does not  exist!")<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main()<br><br>
+
+                            &nbsp;&nbsp;&nbsp;elif option == 3:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;account = int(input("\n Enter account number: "))<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;accounts = obj_Current.get_accounts()<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if len(accounts) > account:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;balance = obj_Current.calculate_balance(account)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("The current balance is: " + str(balance))<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("\n Account does not  exist!")<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main()<br><br>
+
+                            &nbsp;&nbsp;&nbsp;else:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Thank you for using the system!")<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit()<br><br>
+
+
+                           
+                            main()
+
+                        </code>
+                    </div>
+                    <br><br>
+                    <p>
+                        The ABC library provides a way to define abstract interfaces that allows us to use abstract
+                        methods that will need to be implemented in a subclass.
+                    </p>
+
+                </div>
+
+                <div class="skills_holder">
+                    <hr>
+                </div>
+
+                <div class="skills_holder">
+
+                    <h3 class="bold-h3">Read the article by Knox et al. (2018) and answer the following questions:
+                    </h3>
+                    <p> <strong>1. What is Component-based modelling?</strong><br>
+                         It is an approach to model integration where pluggable model components represent processes
+                        within an integrated model. This model is also called Integrated Environmental Model.<br><br>
+                        The idea is to integrate models from multiple disciplines to represent complexities in the
+                        environment of a system.
+                    </p>
+
+                    <p> <strong>2. Upon what do component-based modelling frameworks depend?</strong><br>
+                        They depend on a consistent structure that is integrated by all the components.
+
+                    </p>
+
+                    <p> <strong>3. Within the context of the work presented in this paper, what is Pynsim?</strong><br>
+                        An open-source Python library to build simulation models for networked systems. This framework
+                        contains abstract classes that can be extended using OOP.
+                    </p>
+
+                    <p> <strong>3. How does Pynsim achieve its goal when using object oriented Python
+                            programming?</strong><br>
+                        Pynsim itself uses Object-oriented design, and by providing abstract classes, Pynsim promotes
+                        the use of important OPP concepts, such as inheritance and modularity. This allows multiple
+                        users to ‘plug in’ their Object-oriented code.
+
+                    </p>
+
+
+                </div>
+
+                <div class="skills_holder">
+                    <hr>
+                </div>
+
+                <div class="skills_holder">
+
+                    <h3 class="bold-h3">Reading notes on the chapter 9 of the book by
+                        Philips, D. (2018) Python 3 Object-Oriented programming, 3rd Ed. Packt Publishing
+                    </h3>
+                    <p>
+                        <strong>Design patterns.</strong><br>
+
+                        We discussed the nature of design patterns when discussing the relevance of the architecture
+                        within the parameters that are important for reusability. One of the main concerns to give a
+                        high priority was that the design patterns are situation specific. The design patterns are a
+                        suggested solution to the problems of OOP (Philips, 2018). According to the author, patterns are
+                        a specific set of interactions of objects to resolve a generic problem. The challenge is to
+                        recognise what version of the generic problem is the one we are trying to resolve and adopt the
+                        generic solution to the specific problem.
+                    </p>
+                    <p>
+                        <strong>Iterator design patterns</strong><br>
+                        In Python, known iterators are built considering pre-existing OOP patterns.
+                    </p>
+                    <p>
+                        <strong>Comprehensions</strong><br>
+                        Syntaxes that transform utterable objects into a normal list, set or dictionary.
+                    </p>
+                    <p>
+                        <strong>List comprehensions</strong><br>
+                        These map input values to output values and can apply filters to restrict the output.<br><br>
+
+                        The above does not just apply to Lists but also to Sets and Dictionaries.<br><br>
+
+                        More advanced features are included in Python. These features make use of the OOP principles to
+                        improve performance.
+                    </p>
+                    <p>
+                        <strong>Generator expressions</strong><br>
+
+                        Allow the comprehension syntaxes to read one object at a time. This operation saves memory
+                        space.<br><br>
+
+                        Generator expressions are also a type of comprehension that compresses the generator's syntax to
+                        one line.
+                    </p>
+                    <br>
+                    <p>
+                        <strong>References</strong><br>
+                        Philips, D. (2018) <i>Python 3 Object-Oriented programming</i>, 3rd Ed. Packt Publishing
+                    </p>
+
+                </div>
+
+            </section>
+        </div>
+
+
+        <footer id="footer" class="grey">
+            <div class="footer-content">
+                <ul class="social">
+                    <li class="email"><a href="#">Email</a></li>
+                    <li class="facebook"><a href="#">Facebook</a></li>
+                    <li class="google"><a href="#">Google+</a></li>
+                    <li class="twitter"><a href="#">Twitter</a></li>
+                    <li class="pinterest"><a href="#">Pinterest</a></li>
+                </ul>
+                <p class="copy">Copyright 2022 Tomas Mestanza. All rights reserved. | Template by <a
+                        href="https://www.themezy.com" target="_blank">Themezy</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/cells-by-row.js"></script>
+    <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

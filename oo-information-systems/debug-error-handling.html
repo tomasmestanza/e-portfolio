@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]> <html class="oldie" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Tomas Mestanza</title>
+    <link rel="stylesheet" href="/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/screen.css" />
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div id="wrapper" class="inner">
+        <div class="wrapper-holder">
+            <header id="header">
+                <a class="menu_trigger" href="#">menu</a>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+
+
+                        <li><a href="/Contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="wrapper-holder white">
+            <section id="main">
+                <a class="breadcrums" href="index.html">Object Oriented Information Systems</a>
+                <h2>Debugging / Error Handling, Data Structures and Data Search</h2>
+
+                <div class="skills_holder">
+                    <h3 class="bold-h3">Discuss the ways in which data structures support object-oriented development.
+                        Use examples of three different data structures to contextualise your response.
+                    </h3>
+
+                    <p>In Object-oriented software, the data structures are associated with methods that operate on
+                        them. The Classes are a sort of template of objects that also define a data structure, a
+                        user-defined data structure.
+
+                        When classes use objects of another class, the predefined data structures can contain objects of
+                        the included class.</p>
+
+                    <div class="code-wrapper">
+                        <code>
+
+                            class HolidaySchedule():<br>
+                               holidays = []<br><br>
+
+                            class Person():<br>
+                               pass<br><br>
+
+                               def __init__(self, name, dob):<br>
+                                  self.__name = name<br>
+                                  self.__dob = dob<br><br>
+
+                               def get_name(self):<br>
+                                  return self.__name<br><br>
+
+                            class Employee(Person):<br>
+                               pass<br><br>
+
+                               def __init__(self, name, dob):<br><br>
+
+                                  Person.__init__(self, name, dob)<br><br>
+
+                               def request_holiday(self, date, ndays):<br>
+                                  <strong>self.holiday = Holiday(date, ndays, self)</strong><br><br>
+
+      return self.holiday
+
+                        </code>
+                    </div>
+                    <br><br>
+                    <p>
+                        In this example we use a list to store Holiday objects. The operations defined on list can be
+                        applied disregarding the type of data they store.
+                    </p>
+
+                    <div class="code-wrapper">
+                        <code>
+
+                            # Class to define the coordinates to be used by the Map<br><br>                     
+                            class Point:<br>
+                            &nbsp;&nbsp;&nbsp;pass<br><br>
+
+                            &nbsp;&nbsp;&nbsp;def __init__(self, x, y):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.x = x  # Represented as x in the simulator<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.y = y  # Represented as y in the simulator<br>
+
+                            &nbsp;&nbsp;&nbsp;def __repr__(self):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "(" + str(self.x) + "," + str(self.y) + ")"<br><br>
+
+                            # Class to define areas where the car will circulate. It uses a dictionary to store<br>
+                            # areas and their correspondent coordinates.<br><br>
+
+                            class Map:<br>
+                            &nbsp;&nbsp;&nbsp;map = dict()<br>
+                            &nbsp;&nbsp;&nbsp;pass<br><br>
+
+                            &nbsp;&nbsp;&nbsp;def __init__(self, size, incode):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.generate_map(size, incode)<br><br>
+
+                            &nbsp;&nbsp;&nbsp;# Based on the accepted answer of<br>
+                            &nbsp;&nbsp;&nbsp;# https://stackoverflow.com/questions/4170054/generate-4000-unique-pseudo-random-cartesian-coordinates-faster<br><br>
+
+                            &nbsp;&nbsp;&nbsp;def generate_map(self, size, incode):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keys = range(1, size)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in keys:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>self.map[incode + str(i)] = Point(random.randint(0, 99), random.randint(0, 99)) </strong><br>
+                        </code>
+                    </div>
+                    <br><br>
+                    <p>
+                        For our coding assessment, we will be using a dictionary to store point objects and an
+                        associated postcode. The flexibility of the dictionaries allow to store multiple types of data.
+
+                    </p>
+
+                </div>
+
+                <div class="skills_holder">
+                    <hr>
+                </div>
+
+                <div class="skills_holder">
+
+                    <h3 class="bold-h3">Create a nested dictionary of data on cars within a Car class. Extend the
+                        program to work with the dictionary by calling the following methods:
+                        items(),
+                        keys(),
+                        values()
+                    </h3>
+                    <div class="code-wrapper">
+                        <code>
+                            class Car():<br>
+                            &nbsp;&nbsp;&nbsp;nested_dict = {}<br><br>
+
+                            &nbsp;&nbsp;&nbsp;def __init__(self, gear_box, engine):<br><br>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gear_dict = dict(gear1=gear_box[0], gear2=gear_box[1])<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;engine_dict = dict(size=engine[0], n_cilinders=engine[1])<br><br>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.nested_dict['gear_box'] = gear_dict<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.nested_dict['engine'] = engine_dict<br><br>
+
+                            &nbsp;&nbsp;&nbsp;def get_nested_dict(self):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.nested_dict<br><br>
+
+                            &nbsp;&nbsp;&nbsp;def show_car_data(self):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for index, value in self.nested_dict.<strong>items()</strong>:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(value.<strong>values()</strong>)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(value.<strong>keys()</strong>)<br><br>
+
+
+                            gear_box = ['3.00:1', '2.00:1']<br>
+                            engine = [1.6, 8]<br>
+                            obj_cheverolet = Car(gear_box, engine)<br><br>
+
+                            obj_cheverolet.show_car_data()<br><br>
+
+                            #dict_values(['3.00:1', '2.00:1'])<br>
+                            #dict_keys(['gear1', 'gear2'])<br>
+                            #dict_values([1.6, 8])<br>
+                            #dict_keys(['size', 'n_cilinders'])<br><br>
+
+                            # The same can be done by getting the dictionary using the get_nested_dict() method and looping through to print keys and values. <br><br>
+                            nested_dictionary = obj_cheverolet.get_nested_dict()<br>
+                            for index, value in nested_dictionary.<strong>items()</strong>:<br>
+                       
+                            &nbsp;&nbsp;&nbsp;print(value.<strong>values()</strong>)<br>
+                            &nbsp;&nbsp;&nbsp;print(value.<strong>keys()</strong>)
+                        </code>
+                    </div>
+
+                    <br><br>
+                    <p>
+                        The items() function is used to obtain the top level keys and values of the dictionary.
+                        We can see the values() function returns a list of all values in the dictionary and the keys()
+                        function a
+                        list of all keys in the dictionary.
+
+                    </p>
+
+                </div>
+
+
+
+            </section>
+        </div>
+
+
+        <footer id="footer" class="grey">
+            <div class="footer-content">
+                <ul class="social">
+                    <li class="email"><a href="#">Email</a></li>
+                    <li class="facebook"><a href="#">Facebook</a></li>
+                    <li class="google"><a href="#">Google+</a></li>
+                    <li class="twitter"><a href="#">Twitter</a></li>
+                    <li class="pinterest"><a href="#">Pinterest</a></li>
+                </ul>
+                <p class="copy">Copyright 2022 Tomas Mestanza. All rights reserved. | Template by <a
+                        href="https://www.themezy.com" target="_blank">Themezy</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/cells-by-row.js"></script>
+    <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
