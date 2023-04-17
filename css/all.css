@@ -172,11 +172,11 @@ table {
 table.table tr th {
 	color: #46484c !important;
 	text-align: left;
-	padding: 5px !important;
+	padding: 10px !important;
 }
 
 table.table tr td {
-	padding: 5px !important;
+	padding: 10px !important;
 	text-align: left;
 }
 
