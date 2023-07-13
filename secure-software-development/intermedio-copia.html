@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<!-- saved from url=(0102)http://127.0.0.1:5501/secure-software-development/uml-modelling-to-support-secure-system-planning.html -->
+<html lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Tomas Mestanza</title>
+    <link rel="stylesheet" href="./intermedio-copia_files/jquery.fancybox.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="./intermedio-copia_files/all.css">
+    <link rel="stylesheet" href="./intermedio-copia_files/screen.css">
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div id="wrapper" class="inner">
+        <div class="wrapper-holder">
+            <header id="header">
+                <a class="menu_trigger" href="http://127.0.0.1:5501/secure-software-development/uml-modelling-to-support-secure-system-planning.html#">menu</a>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="http://127.0.0.1:5501/index.html">Home</a></li>
+
+
+                        <li><a href="http://127.0.0.1:5501/Contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="wrapper-holder white">
+            <section id="main">
+                <a class="breadcrums" href="http://127.0.0.1:5501/secure-software-development/index.html">Secure Software Development</a>
+
+                <h2>UML Modelling to Support Secure System Planning</h2>
+
+                <div class="skills_holder">
+                    <h3 class="bold-h3">Codio Activity - Exploring Python tools and features
+                    </h3>
+                    <p><strong>Part I</strong><br>
+                        In this example, you will compile and run a program in C using the Codio workspace provided
+                        (Buffer Overflow in C). The program is already provided as bufoverflow.c - a simple program that
+                        creates a buffer and then asks you for a name, and prints it back out to the screen.
+
+                    </p>
+                    <div class="code-wrapper">
+                        <code>
+
+                            #include <stdio.h> <br>
+                            int main(int argc, char **argv)<br>
+                            {<br>
+                                &nbsp;&nbsp;&nbsp;char buf[8]; // buffer for eight characters<br>
+                                &nbsp;&nbsp;&nbsp;printf("enter name:"); <br>
+                                &nbsp;&nbsp;&nbsp;gets(buf); // read from stdio (sensitive function!)<br>
+                                &nbsp;&nbsp;&nbsp;printf("%s\n", buf); // print out data stored in buf<br>
+                                &nbsp;&nbsp;&nbsp;return 0; // 0 as return value<br>
+                            }
+
+                        </stdio.h></code>
+                    </div>
+                    <br><br>
+                    <p>
+                        Now compile and run the code. To test it, enter your first name (or at least the first 8
+                        characters of it) you should get the output which is just your name repeated back to you.
+                    </p>
+                    <p>Run the code a second time (from the command window this can be achieved by entering
+                        ./bufoverflow on the command line). This time, enter a string of 10 or more characters.
+                    </p>
+                    <p>
+                        <strong>What happens?</strong><br>
+                        An error is shown and the execution gets aborted.
+                    </p>
+                    <p>
+                        <strong>What does the output message mean?</strong><br>
+                        The buffer size (the memory separated or allocated for the elements of the array) is exceeded.
+                        The gets function provided by the header (stdio) doesn’t not control the input’s size.
+                    </p>
+
+                    <p><strong>Part II</strong><br>
+                        Now carry out a comparison of this code with one in Python (Buffer Overflow in Python).
+                    </p>
+                    <div class="code-wrapper">
+                        <code>
+
+                            buffer=[None]*10<br>
+                            for i in range (0,11):<br>
+                            &nbsp;&nbsp;&nbsp;buffer[i]=7<br>
+                            print(buffer)
+
+                        </code>
+                    </div>
+                    <br><br>
+                    <p>
+                        Run your code using: Python overflow.py (or use the codio rocket icon)<br>
+                        <strong>What is the result?.</strong><br>
+                        An error occurred when the element number 11 tries to get assigned to the array. The index
+                        refers to a position that was not defined for this array.
+
+                    </p>
+                    <p>Run pylint on one of your files and evaluate the output.<br>
+                        <strong>What is the result?. Does this tell you how to fix the error above?.</strong><br>
+                        The size defined (10) gets exceeded and the programs throws and error to prevent the buffer
+                        overflow. When defining an array with a fixed size, this errors can happen.
+
+                    </p>
+
+
+                </div>
+
+                <div class="skills_holder">
+                    <hr>
+                </div>
+
+                <div class="skills_holder">
+
+                    <h3 class="bold-h3">
+                        Seminar 1 blog post
+                    </h3>
+
+                    <p><strong>Some say that people are the biggest risk of cyber security.</strong></p>
+
+                    <p><strong>Select five terms from ISO/IEC Standard 27000 Section 3 Terms and Definitions and write a
+                            300-word blog post on how people can be managed to overcome cyber security attacks from the
+                            inside.</strong>
+                    </p>
+
+                    <p>ISO and its 27000 standards define the vocabulary used in information security management
+                        systems.
+                        This post focuses on five concepts in section 3 (Terms and definitions) and how to manage people
+                        to
+                        prevent and respond to cyberattacks. The concepts are level of risk, access control,
+                        authentication,
+                        corrective actions and documented information.</p>
+
+                    <p>The working environment has been expanded, and these days the number of people working remotely
+                        has
+                        considerably increased. According to Vojinovic (2023), 16% of companies globally are fully
+                        remote.
+                        This situation inevitably increases the number of connections to corporate networks; with this,
+                        the
+                        risk of security attacks also increases.</p>
+
+                    <p>In this context, employees must be made aware of the level of risk and the consequences that
+                        simple
+                        actions like unauthorised downloads on a device connected to the corporate network can cause.
+                        The
+                        need for a precise security policy results in critical.</p>
+
+                    <p>Regarding access control, the administrators assume responsibility. They define roles and assign
+                        permissions to the organisation's resources. This has been the traditional approach to dealing
+                        with
+                        access control, but with the advent of environments like the Internet of Things (IoT), where
+                        complex
+                        interactions between users and devices happen, more dynamic control systems are required (Park
+                        et
+                        al., 2021).</p>
+
+                    <p>Because software inevitably gets outdated, a monitoring system can provide suggestions to improve
+                        its security continuously. In a more corporate view, the design of a monitoring system involves
+                        employees from different departments. Monitoring security requires technical, organisational and
+                        legal measures and actions to analyse and predict the level of safety (Zokirovna, 2018).</p>
+
+                    <p>Corrective actions are the result of vulnerability scans or monitoring system outputs. Verifying
+                        the
+                        effect of the corrective actions using auditory services is essential and needs to be done in
+                        cycles. The cycle approach is vital as the security risk assessment is ongoing.</p>
+
+                    <p>Finally, documenting the information to generate a knowledge base of common issues and generic
+                        solutions that can be applied to generic eventual problems. The documented information can
+                        include
+                        references to the management systems and critical organisational information (ISO/IEC, 2018).
+                    </p>
+
+                    <p><strong>References</strong><br><br>
+
+                        ISO/IEC (2018) ISO/IEC 27000:2018(en) Information technology — Security techniques — Information
+                        security management systems — Overview and vocabulary. Available from:
+                        https://www.iso.org/obp/ui/#iso:std:iso-iec:27000:ed-5:v1:en:sec:3. [Accessed 13 May
+                        2023].<br><br>
+
+                        Park, X., Sandhu, R., Gupta, M., Bhatt S. (2021) Activity Control Design Principles: Next
+                        Generation Access Control for Smart and Collaborative Systems. IEEE Access 9: 151004-151022.
+                        DOI: https://doi.org/10.1109/ACCESS.2021.3126201<br><br>
+
+                        Vojinovic I. (2023) Remote Work Statistics: A Glance at the New Normal. Available from:
+                        https://dataprot.net/statistics/remote-work-statistics/ [Accessed 13 May 2023]<br><br>
+
+                        Zokirovna, T (2018) Classification of Modern Security Monitoring Systems in Computer Systems and
+                        Networks. International Journal of AdvancedResearch in Science, Engineering and Technology 5(9):
+                        6764-6769. Available from:
+                        https://www.researchgate.net/publication/338036634_Classification_of_Modern_Security_Monitoring_Systems_in_Computer_Systems_and_Networks
+                        [Accessed 13 May 2023]
+                    </p>
+
+                </div>
+
+                <div class="skills_holder">
+                    <hr>
+                </div>
+
+                <div class="skills_holder">
+
+                    <h3 class="bold-h3">Reading notes on the chapter 9 of the book by
+                        Philips, D. (2018) Python 3 Object-Oriented programming, 3rd Ed. Packt Publishing
+                    </h3>
+                    <p>
+                        <strong>Design patterns.</strong><br>
+
+                        We discussed the nature of design patterns when discussing the relevance of the architecture
+                        within the parameters that are important for reusability. One of the main concerns to give a
+                        high priority was that the design patterns are situation specific. The design patterns are a
+                        suggested solution to the problems of OOP (Philips, 2018). According to the author, patterns are
+                        a specific set of interactions of objects to resolve a generic problem. The challenge is to
+                        recognise what version of the generic problem is the one we are trying to resolve and adopt the
+                        generic solution to the specific problem.
+                    </p>
+                    <p>
+                        <strong>Iterator design patterns</strong><br>
+                        In Python, known iterators are built considering pre-existing OOP patterns.
+                    </p>
+                    <p>
+                        <strong>Comprehensions</strong><br>
+                        Syntaxes that transform utterable objects into a normal list, set or dictionary.
+                    </p>
+                    <p>
+                        <strong>List comprehensions</strong><br>
+                        These map input values to output values and can apply filters to restrict the output.<br><br>
+
+                        The above does not just apply to Lists but also to Sets and Dictionaries.<br><br>
+
+                        More advanced features are included in Python. These features make use of the OOP principles to
+                        improve performance.
+                    </p>
+                    <p>
+                        <strong>Generator expressions</strong><br>
+
+                        Allow the comprehension syntaxes to read one object at a time. This operation saves memory
+                        space.<br><br>
+
+                        Generator expressions are also a type of comprehension that compresses the generator's syntax to
+                        one line.
+                    </p>
+                    <br>
+                    <p>
+                        <strong>References</strong><br>
+                        Philips, D. (2018) <i>Python 3 Object-Oriented programming</i>, 3rd Ed. Packt Publishing
+                    </p>
+
+                </div>
+
+            </section>
+        </div>
+
+
+        <footer id="footer" class="grey">
+            <div class="footer-content">
+                <ul class="social">
+                    <li class="email"><a href="http://127.0.0.1:5501/secure-software-development/uml-modelling-to-support-secure-system-planning.html#">Email</a></li>
+                    <li class="facebook"><a href="http://127.0.0.1:5501/secure-software-development/uml-modelling-to-support-secure-system-planning.html#">Facebook</a></li>
+                    <li class="google"><a href="http://127.0.0.1:5501/secure-software-development/uml-modelling-to-support-secure-system-planning.html#">Google+</a></li>
+                    <li class="twitter"><a href="http://127.0.0.1:5501/secure-software-development/uml-modelling-to-support-secure-system-planning.html#">Twitter</a></li>
+                    <li class="pinterest"><a href="http://127.0.0.1:5501/secure-software-development/uml-modelling-to-support-secure-system-planning.html#">Pinterest</a></li>
+                </ul>
+                <p class="copy">Copyright 2022 Tomas Mestanza. All rights reserved. | Template by <a href="https://www.themezy.com/" target="_blank">Themezy</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="./intermedio-copia_files/jquery-1.11.1.min.js"></script>
+    <script src="./intermedio-copia_files/isotope.pkgd.min.js"></script>
+    <script src="./intermedio-copia_files/cells-by-row.js"></script>
+    <script type="text/javascript" src="./intermedio-copia_files/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="./intermedio-copia_files/main.js"></script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
