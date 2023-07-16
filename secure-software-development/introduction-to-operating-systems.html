@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]> <html class="oldie" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Tomas Mestanza</title>
+    <link rel="stylesheet" href="/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/screen.css" />
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div id="wrapper" class="inner">
+        <div class="wrapper-holder">
+            <header id="header">
+                <a class="menu_trigger" href="#">menu</a>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+
+
+                        <li><a href="/Contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="wrapper-holder white">
+            <section id="main">
+                <a class="breadcrums" href="index.html">Secure Software Development</a>
+
+                <h2>Introduction to Operating Systems</h2>
+
+
+                <div class="skills_holder">
+
+
+                    <h3 class="bold-h3">What is an Ontology?
+                    </h3>
+
+                    <p>
+                        <strong>What do you understand about the ontology that has been presented for your reading this
+                            week? Could you attempt to define an ontology that would be relevant to the system that you
+                            are designing for the summative assessment?</strong>
+                    </p>
+
+                    <p>Becker et al. (2002) define ontology in software as the specification of an abstract model of a
+                        situation happening in the world, including the concepts relevant to this specific situation or
+                        domain. So, being an abstraction, a human has to assume the point of view of a computer to
+                        define
+                        the ontology of software.</p>
+
+                    <p>The ontology presented in the article by Arnaut et al. (2010) aims to overtake the restrictions
+                        of
+                        pre-existing ontologies that can only be used at running time and use web services technology
+                        for
+                        search
+                        and recovery. The proposed ontology is meant to be used in the development phase of the SDLC of
+                        SOA
+                        (Software-oriented architecture).</p>
+
+                    <p>With the previous concepts in mind, the following ontology represents the concepts within the
+                        domain
+                        of the IIS system (Astronaut health Monitoring) we are working on.</p>
+
+                    <p>
+                        <center><img src="ontology-portfolio-unit7.drawio.png" /></center>
+                    </p>
+
+
+                    <p><strong>References</strong><br><br>
+
+                        Becker, M., Heine, C., Herrler, R. & Krempels, K. OntHoS - an Ontology for Hospital Scenarios.
+                        Available from: https://www.researchgate.net/publication/2538611 [Accessed 20 June 2023]
+                        <br><br>
+                        Arnaut, A., Oliaira, K. & Lima, F. OWL-SOA: A service oriented architecture ontology useful
+                        during development time and independent from implementation technology.
+                    </p>
+
+                </div>
+
+                <div class="skills_holder">
+                    <h3 class="bold-h3">Exploring a simple Python shell</h3>
+
+                    <p>Review the blogs at Praka (2018) and Szabo (n.d.) and then create a CLI/ shell that implements
+                        the following:</p>
+
+                    <p>When you enter the command LIST it lists the contents of the current directory</p>
+                    <ul>
+                        <li>The ADD command will add the following two numbers together and provide the result</li>
+                        <li>The HELP command provides a list of commands available</li>
+                        <li>The EXIT command exits the shell</li>
+                        <li>Add suitable comments to your code and add the program to your e-portfolio. Be prepared to
+                            demonstrate it in the seminar session next week.</li>
+                    </ul>
+                    <br>
+                    <p>Run the shell you have created, try a few commands and then answer the questions below. Be
+                        prepared to discuss your answers in the seminar.</p>
+
+                    <p><strong>Answer</strong></p>
+                    <p>Following the example presented by Szabo (N.D.), we have expanded the functionality to include a
+                        functioning ADD command and a LIST command.</p>
+                    <div class="code-wrapper">
+                        <code>
+
+                            from cmd import Cmd<br>
+                            import os<br><br>
+                            
+                            class SSDPrompt(Cmd):<br>
+                            &nbsp;&nbsp;&nbsp;prompt = 'pb> '<br>
+                            &nbsp;&nbsp;&nbsp;intro = "Welcome! Type ? to list commands"<br><br>
+                            
+                            &nbsp;&nbsp;&nbsp;def do_exit(self, inp):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'''exit the application.'''<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Bye")<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return True<br><br>
+                                
+                            &nbsp;&nbsp;&nbsp;def help_exit(self):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('exit the application. Shorthand: x q Ctrl-D.')<br><br>
+
+                            &nbsp;&nbsp;&nbsp;def do_list(self, inp):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'''list the content of the current directory.'''<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cwd = os.getcwd()<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dir_list = os.listdir(cwd)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Files and directories in '", cwd, "' :")<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# prints all files and folders<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(dir_list)<br><br>
+                                    
+                            &nbsp;&nbsp;&nbsp;def do_add(self, inp):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'''adds two numbers.'''<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("adding '{}'".format(inp))<br><br>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num=inp.split()<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print ('addition:',int(num[0])+int(num[1]))<br><br>
+                            
+                            &nbsp;&nbsp;&nbsp;def help_add(self):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Add a new entry to the system.")<br><br>
+                            
+                            &nbsp;&nbsp;&nbsp;def default(self, inp):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'''support for when the inputed command doesn not exist.'''<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if inp == 'x' or inp == 'q':<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.do_exit(inp)<br><br>
+                            
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Default: {}".format(inp))<br><br>
+                            
+                            &nbsp;&nbsp;&nbsp;do_EOF = do_exit<br>
+                            &nbsp;&nbsp;&nbsp;help_EOF = help_exit<br><br>
+                            
+                            if __name__ == '__main__':<br>
+                                SSDPrompt().cmdloop()
+
+                        </code>
+                    </div>
+
+                    <p><br>
+                        <strong>Vulnerability: Command injection</strong><br>
+                        The inputs are not sanitised which can allow potential attackers to execute malicious code.
+
+                    </p>
+
+                    <p>
+                        <strong>Preventions:</strong><br>
+                        1. In general, the use of python 3 will cover a good number of vulnerabilities presented in the
+                        previous version (v2).<br><br>
+                        2. Input validation and sanitisation play an important role to prevent different types of
+                        injection. In this specific example, all inputs to the command methods should be validated and
+                        sanitised before executing the commands.
+                    </p>
+
+
+                    <p><strong>References</strong><br><br>
+
+                        Zsabo, G. (N.D.) Create your own interactive shell with cmd in Python. Available from:
+                        https://code-maven.com/interactive-shell-with-cmd-in-python [Accessed 25 June
+                        2023]
+
+                    </p>
+
+                </div>
+
+            </section>
+        </div>
+
+
+        <footer id="footer" class="grey">
+            <div class="footer-content">
+                <ul class="social">
+                    <li class="email"><a href="#">Email</a></li>
+                    <li class="facebook"><a href="#">Facebook</a></li>
+                    <li class="google"><a href="#">Google+</a></li>
+                    <li class="twitter"><a href="#">Twitter</a></li>
+                    <li class="pinterest"><a href="#">Pinterest</a></li>
+                </ul>
+                <p class="copy">Copyright 2022 Tomas Mestanza. All rights reserved. | Template by <a
+                        href="https://www.themezy.com" target="_blank">Themezy</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/cells-by-row.js"></script>
+    <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

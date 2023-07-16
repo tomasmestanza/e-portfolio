@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]> <html class="oldie" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Tomas Mestanza</title>
+    <link rel="stylesheet" href="/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/screen.css" />
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div id="wrapper" class="inner">
+        <div class="wrapper-holder">
+            <header id="header">
+                <a class="menu_trigger" href="#">menu</a>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+
+
+                        <li><a href="/Contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="wrapper-holder white">
+            <section id="main">
+                <a class="breadcrums" href="index.html">Secure Software Development</a>
+
+                <h2>Developing an API for a Distributed Environment</h2>
+
+
+                <div class="skills_holder">
+
+                    <h3 class="bold-h3">
+                        Collaborative Discussion 2: Cryptography case study: TrueCrypt
+                    </h3>
+
+                    <p>
+                        <strong>Comment on peer's post</strong>
+                    </p>
+
+                    <p>
+                        Hi Francis, </p>
+                    <p>Thank you for your post.</p>
+
+                    <p>As I agree with your considerations about TrueCrypt levels of security, considering that a
+                        vulnerability does not translate into risk without a threat, what levels of security would be
+                        considered secure enough to decide the implementation of a software solution? In our view, it
+                        will all depend on the definition of acceptable risk levels, which, as mentioned by Asnar &
+                        Zannone (2008), are based on models, metrics, and methodologies that are necessary to understand
+                        when the risks are acceptable.</p>
+
+                    <p>Also, as it is well known, flows implementing security need to be applied to each SDLC phase,
+                        and methods need to be used to decrease the complexity of the security issues so developers can
+                        implement them in a simpler way (Pourzandi, 2005). In the case of TrueCrypt, the medium issues
+                        with the kernel made me conclude that there were problems during the environment analysis. I
+                        would like to know your opinion about it or if you consider the main issues happened in a
+                        different phase of the SDLC?</p>
+
+                    <p><strong>References</strong><br><br>
+
+                        Asnar, Y. & Zannone, N. (2008) Perceived risk assessment. Proceedings of the 4th ACM Workshop on
+                        Quality of Protection. DOI: http://dx.doi.org/10.1145/1456362.1456375
+                        <br><br>
+                        Pourzandi, M. (2005) Secure Software Development by Example. IEEE Security and Privacy Magazine
+                        3(4):10 - 17 http://dx.doi.org/10.1109/MSP.2005.103
+                    </p>
+
+
+                    <p>
+                        <strong>Reply to comment from peer</strong>
+                    </p>
+
+                    <p>Hi Bradley,</p>
+
+                    <p>Thank you for taking the time to respond to my post.</p>
+
+                    <p>The relationship descriptions, as you mentioned, can be improved, and they will be improved in
+                        the summary post. Although I have not found a strict way or format to describe the
+                        relationships, it appears that this will depend on what type of relationship is needed to be
+                        described. For example, some describers have one word, others three words, etc. In the ontology
+                        I propose, 'is' should be described better to make the relationships clearer to the reader.</p>
+
+                    <p>To show the concepts used in the TrueCrypt study, Cryptography is a subclass of Vulnerability.
+                        The same applies to its siblings.</p>
+
+                </div>
+
+                <div class="skills_holder">
+                    <p><strong>Seminar 5 Preparation: Cryptography</strong><br><br>
+
+                        Read the Cryptography with Python blog at tutorialspoint.com (link is in the reading list).
+                        Select one of the methods described/ examples given and create a python program that can take a
+                        short piece of text and encrypt it.<br><br>
+
+                        <br>Create a python program in Codio (you can use the Jupyter Notebooks space provided in the
+                        Codio
+                        resources section) that can take a text file and output an encrypted version as a file in your
+                        folder on the Codio system. Demonstrate your program operation in this week’s seminar
+                        session.<br><br>
+
+
+                    </p>
+
+                    <div class="code-wrapper">
+
+                        <code>
+                            # Based on the algorithm presented at https://www.geeksforgeeks.org/how-to-encrypt-and-decrypt-strings-in-python/<br>
+                            import rsa<br><br>
+
+                            def encrypt_decrypt(the_string):<br><br>
+
+                            &nbsp;&nbsp;&nbsp;public_key, private_key = rsa.newkeys(512)<br><br>
+
+                            &nbsp;&nbsp;&nbsp;encrypted_string = rsa.encrypt(the_string.encode(),
+                                                        public_key)<br><br>
+                                
+                                                        &nbsp;&nbsp;&nbsp;print("original string: ", the_string)<br>
+                                                        &nbsp;&nbsp;&nbsp;print("encrypted string: ", encrypted_string)<br><br>
+                            
+                                                        &nbsp;&nbsp;&nbsp;decrypted_string = rsa.decrypt(encrypted_string, private_key).decode()<br><br>
+                                
+                                                        &nbsp;&nbsp;&nbsp;print("decrypted string: ", decrypted_string)<br><br>
+
+
+                            if __name__ == '__main__':<br>
+                            &nbsp;&nbsp;&nbsp;the_string = str(input("Enter the string: "))<br>
+
+                            &nbsp;&nbsp;&nbsp;encrypt_decrypt(the_string)<br>
+
+
+                        </code>
+
+
+
+                    </div>
+
+                    <p> <br><br>Answer the following questions:<br>
+
+                        <strong>Why did you select the algorithm you chose?<br>
+                        </strong>
+                        I would prefer the RSA algorithm as it is secure and widely used. As an asymmetric algorithm, It
+                        uses a public encryption key and a digital signature to ensure that only the intended receiver
+                        can access the original information (Milanov, 2009).
+                    </p>
+
+                    <p>
+                        <strong>2. Would it meet the GDPR regulations? Justify your answer.</strong><br>
+                        GDPR requires companies to use techniques to ensure the secure process, store and transfer
+                        of
+                        personal data, and when this is not implemented, regulatory investigations may be initiated.
+                        (ICO, N.D.). RSA is used in SSL certificates, and it is proved that guarantees the legitimate
+                        own of the
+                        private key. This algorithm has become standard for communication over the internet as it
+                        protects data during its transmission.
+
+                    </p>
+
+                    <p><strong>
+                            References</strong><br><br>
+
+                        ICO (N.D.) Encryption. Available from:
+                        https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/security/a-guide-to-data-security/security/encryption/
+                        [Accessed 29 June 2023]
+                        <br><br>
+
+                        Milanov, E. (2009) The RSA Algorithm. Available from:
+                        https://sites.math.washington.edu/~morrow/336_09/papers/Yevgeny.pdf [Accessed 29 June 2023]
+
+                    </p>
+
+                </div>
+
+            </section>
+        </div>
+
+
+        <footer id="footer" class="grey">
+            <div class="footer-content">
+                <ul class="social">
+                    <li class="email"><a href="#">Email</a></li>
+                    <li class="facebook"><a href="#">Facebook</a></li>
+                    <li class="google"><a href="#">Google+</a></li>
+                    <li class="twitter"><a href="#">Twitter</a></li>
+                    <li class="pinterest"><a href="#">Pinterest</a></li>
+                </ul>
+                <p class="copy">Copyright 2022 Tomas Mestanza. All rights reserved. | Template by <a
+                        href="https://www.themezy.com" target="_blank">Themezy</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/cells-by-row.js"></script>
+    <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

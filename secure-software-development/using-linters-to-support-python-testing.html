@@ -103,7 +103,8 @@
                                 <strong>Adding documenting to the top of the file</strong><br><br>
                                 pylintTest.py:1:0: C0103: Module name "pylintTest" doesn't conform to snake_case naming style (invalid-name)<br>
                                 <strong>Renamed to pylint_test</strong><br><br>
-                                pylintTest.py:6:0: C0103: Constant name "shift" doesn't conform to UPPER_CASE naming style (invalid-name)<br><br>
+                                pylintTest.py:6:0: C0103: Constant name "shift" doesn't conform to UPPER_CASE naming style (invalid-name)<br>
+                                <strong>Converted to uppercase</strong><br><br>
                                 pylintTest.py:7:9: E0602: Undefined variable 'raw_input' (undefined-variable)<br>
                                 <strong>Valid only for Python2. Converted to input instead</strong><br><br>
                                 pylintTest.py:8:8: E0602: Undefined variable 'raw_input' (undefined-variable)<br>
@@ -111,7 +112,7 @@
                                 
                                 pylintTest.py:9:0: C0103: Constant name "letters" doesn't conform to UPPER_CASE naming style (invalid-name)<br>
                                 <strong>Converted to uppercase</strong><br><br>
-                                pylintTest.py:10:0: C0103: Constant name "encoded" doesn't conform to UPPER_CASE naming style (invalid-name)
+                                pylintTest.py:10:0: C0103: Constant name "encoded" doesn't conform to UPPER_CASE naming style (invalid-name)<br>
                                 <strong>Converted to uppercase</strong><br><br>
                                 pylintTest.py:14:12: C0103: Constant name "encoded" doesn't conform to UPPER_CASE naming style (invalid-name)<br>
                                 <strong>Converted to uppercase</strong><br><br>
@@ -437,7 +438,9 @@
                             </code>
 
                             <p>For this particular case, Pylint remarked some errors but most of the output items were
-                                suggestions in terms of consistency. </p>
+                                suggestions in terms of consistency and trailing whitespaces. The changes to the code
+                                had to be done to keep the system uniform so other programmers could quickly understand
+                                the logic and could start adding more functionality to the solution.</p>
 
                         </div>
 
