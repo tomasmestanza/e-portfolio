@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]> <html class="oldie" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Tomas Mestanza</title>
+    <link rel="stylesheet" href="/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/screen.css" />
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div id="wrapper" class="inner">
+        <div class="wrapper-holder">
+            <header id="header">
+                <a class="menu_trigger" href="#">menu</a>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+
+
+                        <li><a href="/Contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="wrapper-holder white">
+            <section id="main">
+                <a class="breadcrums" href="index.html">Secure Software Development</a>
+
+                <h2>Developing an API for a Distributed Environment</h2>
+
+
+                <div class="skills_holder">
+
+                    <h3 class="bold-h3">
+                        Collaborative Discussion 2: Cryptography case study: TrueCrypt
+                    </h3>
+
+                    <p>
+                        <strong>Comment on peer's post</strong>
+                    </p>
+
+                    <p>
+                        Hi Francis, </p>
+                    <p>Thank you for your post.</p>
+
+                    <p>As I agree with your considerations about TrueCrypt levels of security, considering that a
+                        vulnerability does not translate into risk without a threat, what levels of security would be
+                        considered secure enough to decide the implementation of a software solution? In our view, it
+                        will all depend on the definition of acceptable risk levels, which, as mentioned by Asnar &
+                        Zannone (2008), are based on models, metrics, and methodologies that are necessary to understand
+                        when the risks are acceptable.</p>
+
+                    <p>Also, as it is well known, flows implementing security need to be applied to each SDLC phase,
+                        and methods need to be used to decrease the complexity of the security issues so developers can
+                        implement them in a simpler way (Pourzandi, 2005). In the case of TrueCrypt, the medium issues
+                        with the kernel made me conclude that there were problems during the environment analysis. I
+                        would like to know your opinion about it or if you consider the main issues happened in a
+                        different phase of the SDLC?</p>
+
+                    <p><strong>References</strong><br><br>
+
+                        Asnar, Y. & Zannone, N. (2008) Perceived risk assessment. Proceedings of the 4th ACM Workshop on
+                        Quality of Protection. DOI: http://dx.doi.org/10.1145/1456362.1456375
+                        <br><br>
+                        Pourzandi, M. (2005) Secure Software Development by Example. IEEE Security and Privacy Magazine
+                        3(4):10 - 17 http://dx.doi.org/10.1109/MSP.2005.103
+                    </p>
+
+
+                    <p>
+                        <strong>Reply to comment from peer</strong>
+                    </p>
+
+                    <p>Hi Bradley,</p>
+
+                    <p>Thank you for taking the time to respond to my post.</p>
+
+                    <p>The relationship descriptions, as you mentioned, can be improved, and they will be improved in
+                        the summary post. Although I have not found a strict way or format to describe the
+                        relationships, it appears that this will depend on what type of relationship is needed to be
+                        described. For example, some describers have one word, others three words, etc. In the ontology
+                        I propose, 'is' should be described better to make the relationships clearer to the reader.</p>
+
+                    <p>To show the concepts used in the TrueCrypt study, Cryptography is a subclass of Vulnerability.
+                        The same applies to its siblings.</p>
+
+                </div>
+
+                <div class="skills_holder">
+                    <p><strong>An API for a Distributed Environment</strong><br><br>
+
+                        Using the Jupyter Notebook workspace, create a file named api.py and copy the following code
+                        into it (a copy is provided for upload to Codio/GitHub): You can install Jupyter Notebook on
+                        your local machine following these instructions or via the University of Essex Software Hub.
+
+
+                    </p>
+
+                    <div class="code-wrapper">
+
+                        <code>
+                            #source of code: https://codeburst.io/this-is-how-easy-it-is-to-create-a-rest-api-8a25122ab1f3
+                            <br><br>
+
+                            from flask import Flask<br>
+                            from flask_restful import Api, Resource, reqparse<br><br>
+                             
+                            app = Flask(__name__)<br>
+                            api = Api(app)<br><br>
+                             
+                            users = [<br>
+                            &nbsp;&nbsp;&nbsp;{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "James",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"age": 30,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"occupation": "Network Engineer"<br>
+                            &nbsp;&nbsp;&nbsp;},<br>
+                            &nbsp;&nbsp;&nbsp;{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "Ann",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"age": 32,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"occupation": "Doctor"<br>
+                            &nbsp;&nbsp;&nbsp;},<br>
+                            &nbsp;&nbsp;&nbsp;{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "Jason",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"age": 22,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"occupation": "Web Developer"<br>
+                            &nbsp;&nbsp;&nbsp;}<br>
+                            ]<br><br>
+                             
+                            class User(Resource):<br>
+                            &nbsp;&nbsp;&nbsp;def get(self, name):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for user in users:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(name == user["name"]):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return user, 200<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "User not found", 404<br><br>
+                             
+                            &nbsp;&nbsp;&nbsp;def post(self, name):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parser = reqparse.RequestParser()<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parser.add_argument("age")<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parser.add_argument("occupation")<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;args = parser.parse_args()<br><br>
+                             
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for user in users:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(name == user["name"]):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "User with name {} already exists".format(name), 400<br><br>
+                             
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user = {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": name,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"age": args["age"],<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"occupation": args["occupation"]<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;users.append(user)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return user, 201<br><br>
+                             
+                            &nbsp;&nbsp;&nbsp;def put(self, name):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parser = reqparse.RequestParser()<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parser.add_argument("age")<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parser.add_argument("occupation")<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;args = parser.parse_args()<br><br>
+                             
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for user in users:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(name == user["name"]):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user["age"] = args["age"]<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user["occupation"] = args["occupation"]<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return user, 200<br><br>
+                                    
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user = {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": name,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"age": args["age"],<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"occupation": args["occupation"]<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;users.append(user)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return user, 201<br><br>
+                             
+                            &nbsp;&nbsp;&nbsp;def delete(self, name):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;global users<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;users = [user for user in users if user["name"] != name]<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "{} is deleted.".format(name), 200<br><br>
+                                  
+                            api.add_resource(User, "/user/<string:name>")<br><br>
+                             
+                            app.run(debug=True)<br>
+
+
+
+                        </code>
+
+
+
+                    </div>
+                    <br>
+
+                    <p><strong>Question 1</strong><br><br>
+                        Run the API.py code. Take a screenshot of the terminal output. What command did you use to
+                        compile
+                        and run the code?
+                    </p>
+
+                    <p><strong>Answer</strong><br><br>
+                        On visual studio terminal, I run the usual command python <filename>.py which is provided by the
+                            python installation. The code starts a minimalistic web server that will be use to serve the
+                            API methods requested by the browser.
+                    </p>
+
+                    <p><strong>Question 2</strong><br><br>
+                        Run the following command at the terminal prompt: w3m http://127.0.0.1:5000/user/Ann<br>
+                        What happens when this command is run, and why?
+                    </p>
+                    <p><strong>Answer</strong><br><br>
+                        Using the browser to access the URL http://127.0.0.1:5000/user/Ann, shows the record that
+                        matches the parameter name in JSON format. This indicates. That the get method that uses the
+                        name as parameter, works as expected.
+                    </p>
+
+
+
+                    <p><strong>Question 3</strong><br><br>
+                        Run the following command at the terminal prompt: w3m http://127.0.0.1:5000/user/Adam<br>
+
+                        What happens when this command is run, and why?
+                    </p>
+                    <p><strong>Answer</strong><br><br>
+                        No records are found because the search by name can not find any coincidences.
+                    </p>
+
+
+                    <p><strong>Question 4</strong><br><br>
+                        What capability is achieved by the flask library?
+
+                    </p>
+
+                    <p><strong>Answer</strong><br><br>
+                        The extension of the flask library called flask_restful provides an a framework to build RESTFUL
+                        APIs. As a framework, it provides common functions to produce RESFUL APIs faster and under
+                        standards.
+                    </p>
+
+
+
+                </div>
+
+            </section>
+        </div>
+
+
+        <footer id="footer" class="grey">
+            <div class="footer-content">
+                <ul class="social">
+                    <li class="email"><a href="#">Email</a></li>
+                    <li class="facebook"><a href="#">Facebook</a></li>
+                    <li class="google"><a href="#">Google+</a></li>
+                    <li class="twitter"><a href="#">Twitter</a></li>
+                    <li class="pinterest"><a href="#">Pinterest</a></li>
+                </ul>
+                <p class="copy">Copyright 2022 Tomas Mestanza. All rights reserved. | Template by <a
+                        href="https://www.themezy.com" target="_blank">Themezy</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/cells-by-row.js"></script>
+    <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

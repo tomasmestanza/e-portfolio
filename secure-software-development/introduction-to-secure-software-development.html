@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]> <html class="oldie" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Tomas Mestanza</title>
+    <link rel="stylesheet" href="/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/screen.css" />
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div id="wrapper" class="inner">
+        <div class="wrapper-holder">
+            <header id="header">
+                <a class="menu_trigger" href="#">menu</a>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+
+
+                        <li><a href="/Contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="wrapper-holder white">
+            <section id="main">
+                <a class="breadcrums" href="index.html">Secure Software Development</a>
+
+                <h2>Introduction to Secure Software Development</h2>
+
+                <div class="skills_holder">
+                    <h3 class="bold-h3">Reading notes on Introduction to Secure Software Development
+                    </h3>
+
+                    <p>
+                        Cybersecurity is an ongoing task. It is constantly evolving and requires commitment from
+                        organisations to apply the latest measures to stop cybercrime and prevent or mitigate its
+                        effects.
+                    </p>
+
+                    <p>Standards are used to secure software systems, and these define good practices. Independent
+                        parties
+                        develop these standards.</p>
+
+
+                    <p><strong>Integrating Security (Agile Approach)</strong></p>
+
+                    <p>In an iterative agile approach to managing software development, the developers can easily return
+                        to
+                        earlier stages in the life cycle without much difficulty.</p>
+
+                    <p>From testing, for example, a developer can return to redesign the system. The iterative approach
+                        to
+                        development suits software projects which produce modular microservices and which are spread out
+                        for
+                        development across a team.</p>
+
+                    <p>An agile approach depends on good communication, and a software product will be delivered to a
+                        customer once it is agreed that it meets their requirements. Otherwise, the system will enter
+                        another iteration of development.</p>
+
+                    <p>As mentioned earlier, there are a variety of agile approaches to development. These include:
+                        Scram, pair programming, DSDM, Test-driven development</p>
+
+                    <p>As agile is based on short iterations, integrating security into it can make it difficult.
+                        Prioritising the quality of software can make the identification of security concerns, not a
+                        priority, and issues can be carried out from one stage to another.</p>
+
+
+                </div>
+
+                <div class="skills_holder">
+                    <hr>
+                </div>
+
+                <div class="skills_holder">
+
+                    <h3 class="bold-h3">
+                        Collaborative Discussion 1: UML flowchart
+                    </h3>
+
+                    <p><strong>Some say that people are the biggest risk of cyber security.</strong></p>
+
+                    <p><strong>Select five terms from ISO/IEC Standard 27000 Section 3 Terms and Definitions and write a
+                            300-word blog post on how people can be managed to overcome cyber security attacks from the
+                            inside.</strong>
+                    </p>
+
+                    <p>Deserialisation of untrusted data happens when the data consumer de-serialises data without
+                        proper
+                        verification (CWE, N.D.). Potential invalid data can cause security issues when an external
+                        serialised object is consumed.</p>
+
+                    <p>Execution of an API call in the background and then sent through the caller interface as
+                        serialised
+                        data for it to be de-serialised can potentially cause security issues as it is an external
+                        object/array. Some verification action has to be applied before de-serialisation to ensure the
+                        resultant data will be valid.</p>
+
+                    <p>For example, job systems process external APIs that provide data to it in an a-synchronised way.
+                        The
+                        interfaces involved can only send the processed data as a serialised array. The data is then
+                        sent to
+                        the requester and used by the local system without proper verification.</p>
+
+                    <p>One of the consequences of this vulnerability is the change in the code execution through
+                        malicious
+                        objects resulting from the de-serialisation operation (OWASP, N.D.).</p>
+
+                    <p>The following flowchart shows the steps that can lead to this vulnerability.</p>
+
+
+                    <p>
+                        <center><img src="flowchart.png"></center>
+                    </p>
+
+                    <p>
+                        A sequence diagram better represents the dynamic interaction between the services involved. The
+                        messages passed between the roles are arranged in relation to a time sequence (Rumbaugh et al.,
+                        1999).
+                    </p>
+
+                    <p>
+                        <center><img src="sequence-diagram.png"></center>
+                    </p>
+
+                    <p><strong>References</strong><br><br>
+
+                        CWE (N.D.) Deserialisation of Untrusted Data. Available from:
+                        https://cwe.mitre.org/data/definitions/502.html [Accessed 07 May 2023]<br><br>
+
+                        OWASP (N.D.) Deserialisation of untrusted data. Available from:
+                        https://owasp.org/www-community/vulnerabilities/Deserialization_of_untrusted_data [Accessed 07
+                        May 2023]<br><br>
+
+                        Rumbaugh, J., Jacobson, I. & Booch, G. (1999) The Unified Modelling Language Reference. 1st ed.
+                        Massachusetts: Addison Wesley Longman Inc.
+                    </p>
+
+                </div>
+
+
+
+
+            </section>
+        </div>
+
+
+        <footer id="footer" class="grey">
+            <div class="footer-content">
+                <ul class="social">
+                    <li class="email"><a href="#">Email</a></li>
+                    <li class="facebook"><a href="#">Facebook</a></li>
+                    <li class="google"><a href="#">Google+</a></li>
+                    <li class="twitter"><a href="#">Twitter</a></li>
+                    <li class="pinterest"><a href="#">Pinterest</a></li>
+                </ul>
+                <p class="copy">Copyright 2022 Tomas Mestanza. All rights reserved. | Template by <a
+                        href="https://www.themezy.com" target="_blank">Themezy</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/cells-by-row.js"></script>
+    <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

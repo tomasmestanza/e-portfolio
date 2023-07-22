@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]> <html class="oldie" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Tomas Mestanza</title>
+    <link rel="stylesheet" href="/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/screen.css" />
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div id="wrapper" class="inner">
+        <div class="wrapper-holder">
+            <header id="header">
+                <a class="menu_trigger" href="#">menu</a>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+
+
+                        <li><a href="/Contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="wrapper-holder white">
+            <section id="main">
+                <a class="breadcrums" href="index.html">Secure Software Development</a>
+
+                <h2>Cryptography and Its Use in Operating Systems</h2>
+
+
+                <div class="skills_holder">
+
+                    <h3 class="bold-h3">
+                        Collaborative Discussion 2: Cryptography case study: TrueCrypt
+                    </h3>
+
+                    <p>
+                        <strong>The (anonymous) TrueCrypt authors have said “Using TrueCrypt is not secure as it may
+                            contain unfixed security issues” (http://truecrypt.sourceforge.net/, 2014). Does the
+                            cryptanalysis provided above prove or disprove this assumption?<br><br>
+                            Would you be prepared to recommend TrueCrypt to a friend as a secure storage environment?
+                            What caveats (if any) would you add?</strong>
+                    </p>
+
+                    <p><strong>Question 1.</strong> The (anonymous) TrueCrypt authors have said, "Using TrueCrypt is not
+                        secure as it may
+                        contain unfixed security issues" (http://truecrypt.sourceforge.net/, 2014). Does the
+                        cryptanalysis
+                        provided above prove or disprove this assumption?</p>
+
+                    <p>From the finding of the Audit Project, some of the main issues are relative to the operative
+                        system
+                        and its features. Some of the recommendations are updating independent parts of the OS. These
+                        recommendations reveal that the environment where TrueCrypt had to run greatly impacted its
+                        security
+                        performance. Others can argue that TrueCrypt could have adapted to use the OS more efficiently
+                        and
+                        securely. The difficult maintenance is not directly proportional to its security risk levels.
+                        However, it could impact it in the long term as all other activities are made slow with complex
+                        maintenance. As indicated in the studio, finding bugs also becomes a difficult task.</p>
+
+                    <p>Finally, the study by Junestam & Guigo (2014) concludes with the absence of high-level severity
+                        vulnerabilities and, at the same time, shows that most vulnerabilities found are informational
+                        and
+                        low. These findings leave the definition of acceptable risks as the key to whether to adopt the
+                        solution. Models, metrics and methodologies are necessary to understand when the risks are
+                        acceptable, and analysis is needed to mitigate too high risks (Asnar & Zannone, 2008).</p>
+
+                    <p>It is clear that TrueCrypt is not 100% secure, but in many cases, acceptable levels of security
+                        risks will determine if the solution is suitable or not. So it does not prove the assumption.
+                    </p>
+
+                    <p><strong>Question 2.</strong> Would you be prepared to recommend TrueCrypt to a friend as a secure
+                        storage
+                        environment? What caveats (if any) would you add?</p>
+
+                    <p>Currently not. However, placing ourselves in the context of time and considering the definition
+                        of
+                        acceptable risk levels, and the availability of other solutions around that time, we would have
+                        recommended the solution with the following caveats.</p>
+
+                    <p>If recoverability is critical and searchability very important, then another solution could meet
+                        the
+                        requirements in a better way.</p>
+
+                    <p>The weak header volume key derivation described in the studio is the main cryptographic concern.
+                        The
+                        mounted volume's physical security will need to be a priority.</p>
+                    <p>
+                        <center><img src="ontology.drawio.png" style="width: 100%;" /></center>
+                    </p>
+
+
+                    <p><strong>References</strong><br><br>
+
+                        Asnar, Y. & Zannone, N. (2008) Perceived risk assessment. Proceedings of the 4th ACM Workshop on
+                        Quality of Protection. DOI: http://dx.doi.org/10.1145/1456362.1456375<br> <br>
+
+                        Junestam, A. & Guigo, N. (2014) Open Crypto Audit Project Truecrypt Security Assessment.
+                        Available from:
+                        https://opencryptoaudit.org/reports/iSec_Final_Open_Crypto_Audit_Project_TrueCrypt_Security_Assessment.pdf
+                        [Accessed 22 June 2023].
+                    </p>
+
+
+                </div>
+
+                <div class="skills_holder">
+                    <p><strong>Seminar 4 Preparation: Cryptography</strong><br><br>
+
+                        Read the Cryptography with Python blog at tutorialspoint.com (link is in the reading list).
+                        Select one of the methods described/ examples given and create a python program that can take a
+                        short piece of text and encrypt it.<br><br>
+
+                        <br>Create a python program in Codio (you can use the Jupyter Notebooks space provided in the
+                        Codio
+                        resources section) that can take a text file and output an encrypted version as a file in your
+                        folder on the Codio system. Demonstrate your program operation in this week’s seminar
+                        session.<br><br>
+
+
+                    </p>
+
+                    <div class="code-wrapper">
+
+                        <code>
+                            # Based on the algorithm presented at https://www.geeksforgeeks.org/how-to-encrypt-and-decrypt-strings-in-python/<br>
+                            import rsa<br><br>
+
+                            def encrypt_decrypt(the_string):<br><br>
+
+                            &nbsp;&nbsp;&nbsp;public_key, private_key = rsa.newkeys(512)<br><br>
+
+                            &nbsp;&nbsp;&nbsp;encrypted_string = rsa.encrypt(the_string.encode(),
+                                                        public_key)<br><br>
+                                
+                                                        &nbsp;&nbsp;&nbsp;print("original string: ", the_string)<br>
+                                                        &nbsp;&nbsp;&nbsp;print("encrypted string: ", encrypted_string)<br><br>
+                            
+                                                        &nbsp;&nbsp;&nbsp;decrypted_string = rsa.decrypt(encrypted_string, private_key).decode()<br><br>
+                                
+                                                        &nbsp;&nbsp;&nbsp;print("decrypted string: ", decrypted_string)<br><br>
+
+
+                            if __name__ == '__main__':<br>
+                            &nbsp;&nbsp;&nbsp;the_string = str(input("Enter the string: "))<br>
+
+                            &nbsp;&nbsp;&nbsp;encrypt_decrypt(the_string)<br>
+
+
+                        </code>
+
+
+
+                    </div>
+
+                    <p> <br><br>Answer the following questions:<br><br>
+
+                        <strong>Why did you select the algorithm you chose?<br>
+                        </strong>
+                        I would prefer the RSA algorithm as it is secure and widely used. As an asymmetric algorithm, It
+                        uses a public encryption key and a digital signature to ensure that only the intended receiver
+                        can access the original information (Milanov, 2009).
+                    </p>
+
+                    <p>
+                        <strong>2. Would it meet the GDPR regulations? Justify your answer.</strong><br>
+                        GDPR requires companies to use techniques to ensure the secure process, store and transfer
+                        of
+                        personal data, and when this is not implemented, regulatory investigations may be initiated.
+                        (ICO, N.D.). RSA is used in SSL certificates, and it is proved that guarantees the legitimate
+                        own of the
+                        private key. This algorithm has become standard for communication over the internet as it
+                        protects data during its transmission.
+
+                    </p>
+
+                    <p><strong>
+                            References</strong><br><br>
+
+                        ICO (N.D.) Encryption. Available from:
+                        https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/security/a-guide-to-data-security/security/encryption/
+                        [Accessed 29 June 2023]
+                        <br><br>
+
+                        Milanov, E. (2009) The RSA Algorithm. Available from:
+                        https://sites.math.washington.edu/~morrow/336_09/papers/Yevgeny.pdf [Accessed 29 June 2023]
+
+                    </p>
+
+                </div>
+
+            </section>
+        </div>
+
+
+        <footer id="footer" class="grey">
+            <div class="footer-content">
+                <ul class="social">
+                    <li class="email"><a href="#">Email</a></li>
+                    <li class="facebook"><a href="#">Facebook</a></li>
+                    <li class="google"><a href="#">Google+</a></li>
+                    <li class="twitter"><a href="#">Twitter</a></li>
+                    <li class="pinterest"><a href="#">Pinterest</a></li>
+                </ul>
+                <p class="copy">Copyright 2022 Tomas Mestanza. All rights reserved. | Template by <a
+                        href="https://www.themezy.com" target="_blank">Themezy</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/cells-by-row.js"></script>
+    <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

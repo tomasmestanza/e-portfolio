@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]> <html class="oldie" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Tomas Mestanza</title>
+    <link rel="stylesheet" href="/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/screen.css" />
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div id="wrapper" class="inner">
+        <div class="wrapper-holder">
+            <header id="header">
+                <a class="menu_trigger" href="#">menu</a>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+
+
+                        <li><a href="/Contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="wrapper-holder white">
+            <section id="main">
+                <a class="breadcrums" href="index.html">Secure Software Development</a>
+
+                <h2>Programming Languages: History, Concepts & Design</h2>
+
+                <div class="skills_holder">
+                    <h3 class="bold-h3">Codio Activity - Exploring Python tools and features
+                    </h3>
+                    <p><strong>Part I</strong><br>
+                        In this example, you will compile and run a program in C using the Codio workspace provided
+                        (Buffer Overflow in C). The program is already provided as bufoverflow.c - a simple program that
+                        creates a buffer and then asks you for a name, and prints it back out to the screen.
+
+                    </p>
+                    <div class="code-wrapper">
+                        <code>
+
+                            #include <stdio.h> <br>
+                            int main(int argc, char **argv)<br>
+                            {<br>
+                                &nbsp;&nbsp;&nbsp;char buf[8]; // buffer for eight characters<br>
+                                &nbsp;&nbsp;&nbsp;printf("enter name:"); <br>
+                                &nbsp;&nbsp;&nbsp;gets(buf); // read from stdio (sensitive function!)<br>
+                                &nbsp;&nbsp;&nbsp;printf("%s\n", buf); // print out data stored in buf<br>
+                                &nbsp;&nbsp;&nbsp;return 0; // 0 as return value<br>
+                            }
+
+                        </stdio.h></code>
+                    </div>
+                    <br><br>
+                    <p>
+                        Now compile and run the code. To test it, enter your first name (or at least the first 8
+                        characters of it) you should get the output which is just your name repeated back to you.
+                    </p>
+                    <p>Run the code a second time (from the command window this can be achieved by entering
+                        ./bufoverflow on the command line). This time, enter a string of 10 or more characters.
+                    </p>
+                    <p>
+                        <strong>What happens?</strong><br>
+                        An error is shown and the execution gets aborted.
+                    </p>
+                    <p>
+                        <strong>What does the output message mean?</strong><br>
+                        The buffer size (the memory separated or allocated for the elements of the array) is exceeded.
+                        The gets function provided by the header (stdio) doesn’t not control the input’s size.
+                    </p>
+
+                    <p><strong>Part II</strong><br>
+                        Now carry out a comparison of this code with one in Python (Buffer Overflow in Python).
+                    </p>
+                    <div class="code-wrapper">
+                        <code>
+
+                            buffer=[None]*10<br>
+                            for i in range (0,11):<br>
+                            &nbsp;&nbsp;&nbsp;buffer[i]=7<br>
+                            print(buffer)
+
+                        </code>
+                    </div>
+                    <br><br>
+                    <p>
+                        Run your code using: Python overflow.py (or use the codio rocket icon)<br>
+                        <strong>What is the result?.</strong><br>
+                        An error occurred when the element number 11 tries to get assigned to the array. The index
+                        refers to a position that was not defined for this array.
+
+                    </p>
+                    <p>Run pylint on one of your files and evaluate the output.<br>
+                        <strong>What is the result?. Does this tell you how to fix the error above?.</strong><br>
+                        The size defined (10) gets exceeded and the programs throws and error to prevent the buffer
+                        overflow. When defining an array with a fixed size, this errors can happen.
+
+                    </p>
+
+
+                </div>
+
+                <div class="skills_holder">
+                    <hr>
+                </div>
+
+
+                <div class="skills_holder">
+                    <h3 class="bold-h3">Team Discussion: What is a Secure Programming Language?
+                    </h3>
+                    <p><strong>
+                            You should read Chapter 2,6,7,8 of the course text (Pillai, 2017) and Cifuentes & Bierman
+                            (2019)
+                            and then answer the questions below, adding them as evidence to your e-portfolio.</strong>
+
+                    </p>
+                    <p><strong>1. What factors determine whether a programming language is secure or not?</strong></p>
+                    <p>
+                        A secure language should provide the following characteristics.<br>
+                    <ul>
+                        <li>Allow implementation of Confidentiality, integrity and availability</li>
+                        <li>Strong security protection</li>
+                        <li>Resilience</li>
+                        <li>Abstraction and provided buffer error.</li>
+                    </ul>
+                    </p>
+                    <p><strong>2. Could Python be classed as a secure language? Justify your answer.</strong></p>
+                    <p>
+                        While we can notice security issues with different versions of Python, like serialising objects
+                        or
+                        overflow errors, making software secure is a practice more than a concept of characteristic.
+                        However, the language used for development has to provide the tools to implement security
+                        concepts.
+                    </p>
+                    <p>
+                        Due to its popularity, Python is also vulnerable in terms of libraries that can create security
+                        holes, and third-party components can bring vulnerabilities If these are compromised with
+                        security
+                        breaches.
+                    </p>
+                    <p>
+                        From the point of view of containing the necessary tools to prevent security issues, I consider
+                        Python a secure language. Security is an ongoing task, and a big percentage depends on the
+                        implementation.
+                    </p>
+
+
+                    <p><strong>Bibliography</strong><br><br>
+                        Pillai, A. (2017) Software architecture with Python: design and architect highly scalable,
+                        robust, clean, and high performance applications in Python. Birmingham, UK. Packt Publishing.
+                    </p>
+
+                </div>
+
+                <div class="skills_holder">
+                    <hr>
+                </div>
+
+                <div class="skills_holder">
+
+                    <h3 class="bold-h3">Collaborative Discussion: Summary Post
+                    </h3>
+
+                    <p>My initial thoughts about the deserialisation of untrusted data, outlined by OWASP (N.D.),
+                        included
+                        the security risks of consuming serialised objects without prior validation.</p>
+
+                    <p>After further research and considering an important suggestion by a fellow student, I agree that
+                        a
+                        more structured process has to be applied to avoid the consumption of untrusted serialised data.
+                        Security measures during serialisation, transmission and deserialisation are essential to
+                        mitigate
+                        the potential effects of this vulnerability.</p>
+
+                    <p>The first of these three processes (serialisation) can only be applied if the data to be consumed
+                        is, in a way, part of the same system. Being able to participate in the serialisation process
+                        will
+                        allow the use of less complex data formats and avoid the serialisation of sensitive data (Trad,
+                        2022).</p>
+
+                    <p>On the transmission of the data, TLS/SSL certificates and a digital signature are advised to
+                        evaluate the data integrity (Trad, 2022).</p>
+
+                    <p>Once the data arrives at the requester, validation and sanitation should be performed along with
+                        other security measures. At this point, having an updated list of measures is critical. These
+                        security measures have to be tested periodically.</p>
+
+                    <p>Regarding the flow diagram, the feedback received was about including an activity diagram to show
+                        a
+                        legitimate and a malevolent actor more precisely. The diagram is below.</p>
+
+                    <p>
+                        <center><img src="../images/module3/deserialisation-activity.png" /></center>
+                    </p>
+
+                    <p>The diagram shows the importance of having an up-to-date set of security measures when
+                        deserialising
+                        the data.</p>
+
+                    <p><strong>References</strong><br><br>
+
+                        OWASP (N.D.) Deserialisation of untrusted data. Available from:
+                        https://owasp.org/www-community/vulnerabilities/Deserialization_of_untrusted_data [Accessed 07
+                        May
+                        2023]<br><br>
+
+                        Trad, A. (2022) Analysis OWASP Top 10-2017. Available from: t:
+                        https://www.researchgate.net/publication/363311951 [Accessed 20 May 2023]
+                    </p>
+
+                </div>
+
+
+
+            </section>
+        </div>
+
+
+        <footer id="footer" class="grey">
+            <div class="footer-content">
+                <ul class="social">
+                    <li class="email"><a href="#">Email</a></li>
+                    <li class="facebook"><a href="#">Facebook</a></li>
+                    <li class="google"><a href="#">Google+</a></li>
+                    <li class="twitter"><a href="#">Twitter</a></li>
+                    <li class="pinterest"><a href="#">Pinterest</a></li>
+                </ul>
+                <p class="copy">Copyright 2022 Tomas Mestanza. All rights reserved. | Template by <a
+                        href="https://www.themezy.com" target="_blank">Themezy</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/cells-by-row.js"></script>
+    <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

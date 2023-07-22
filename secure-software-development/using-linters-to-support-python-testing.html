@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]> <html class="oldie" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Tomas Mestanza</title>
+    <link rel="stylesheet" href="/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/screen.css" />
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div id="wrapper" class="inner">
+        <div class="wrapper-holder">
+            <header id="header">
+                <a class="menu_trigger" href="#">menu</a>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+
+
+                        <li><a href="/Contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="wrapper-holder white">
+            <section id="main">
+                <a class="breadcrums" href="index.html">Secure Software Development</a>
+
+                <h2>Using Linters to Support Python Testing</h2>
+
+                <div class="skills_holder">
+                    <h3 class="bold-h3">Seminar 3 Preparation
+                    </h3>
+                    <div class="skills_holder">
+                        <p><strong>Question 1</strong><br><br>
+
+                            Run styleLint.py.<br>
+                            What happens when the code is run?<br>
+                            An error is shown. It is related to indentation<br><br>
+
+                            Can you modify this code for a more favourable outcome?<br>
+                            Adding indentation sorts the issues running the code but the output is blank<br><br>
+
+                            What amendments have you made to the code?<br>
+                            I have added a call to the function to evaluate the output.<br><br></p>
+
+                        <div class="code-wrapper">
+                            <code>
+
+                                # CODE SOURCE: SOFTWARE ARCHITECTURE WITH PYTHON<br><br>
+ 
+                                def factorial(n):<br>
+                                    &nbsp;&nbsp;&nbsp;""" Return factorial of n """<br>
+                                    &nbsp;&nbsp;&nbsp;if n == 0:<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 1<br>
+                                    &nbsp;&nbsp;&nbsp;else:<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return n*factorial(n-1)<br><br>
+                                
+                                print(factorial(5))
+
+                            </code>
+                        </div>
+
+
+                    </div>
+
+                    <div class="skills_holder">
+                        <p><strong>Question 2</strong><br><br>
+
+                            Run pylint on pylintTest.py<br>
+                            Review each of the code errors returned.<br>
+                            First error is relate to syntax (brackets missing for print )<br><br>
+
+                            Can you correct each of the errors identified by pylint? <br>
+                            Before correcting the code errors,save the pylintTest.py file with a new name (it will be
+                            needed again in the next question).
+                        </p>
+
+                        <div class="code-wrapper">
+                            <code>
+
+                                <strong>LIST OF REPORTED ERRORS.</strong><br><br>
+                                pylintTest.py:5:0: C0303: Trailing whitespace (trailing-whitespace)<br>
+                                <strong>Delete line space.</strong><br><br>
+                                pylintTest.py:8:0: C0325: Unnecessary parens after '=' keyword (superfluous-parens)<br>
+                                <strong>Delete Parens</strong><br><br>
+                                pylintTest.py:26:0: C0304: Final newline missing (missing-final-newline)<br>
+                                <strong>Empty new line added to the bottom of the file</strong><br><br>
+                                pylintTest.py:1:0: C0114: Missing module docstring (missing-module-docstring)<br>
+                                <strong>Adding documenting to the top of the file</strong><br><br>
+                                pylintTest.py:1:0: C0103: Module name "pylintTest" doesn't conform to snake_case naming style (invalid-name)<br>
+                                <strong>Renamed to pylint_test</strong><br><br>
+                                pylintTest.py:6:0: C0103: Constant name "shift" doesn't conform to UPPER_CASE naming style (invalid-name)<br>
+                                <strong>Converted to uppercase</strong><br><br>
+                                pylintTest.py:7:9: E0602: Undefined variable 'raw_input' (undefined-variable)<br>
+                                <strong>Valid only for Python2. Converted to input instead</strong><br><br>
+                                pylintTest.py:8:8: E0602: Undefined variable 'raw_input' (undefined-variable)<br>
+                                <strong>Valid only for Python2. Converted to input instead</strong><br><br>
+                                
+                                pylintTest.py:9:0: C0103: Constant name "letters" doesn't conform to UPPER_CASE naming style (invalid-name)<br>
+                                <strong>Converted to uppercase</strong><br><br>
+                                pylintTest.py:10:0: C0103: Constant name "encoded" doesn't conform to UPPER_CASE naming style (invalid-name)<br>
+                                <strong>Converted to uppercase</strong><br><br>
+                                pylintTest.py:14:12: C0103: Constant name "encoded" doesn't conform to UPPER_CASE naming style (invalid-name)<br>
+                                <strong>Converted to uppercase</strong><br><br>
+                                pylintTest.py:16:12: C0103: Constant name "x" doesn't conform to UPPER_CASE naming style (invalid-name)<br>
+                                <strong>Converterd to uppercase</strong><br><br>
+                                pylintTest.py:17:12: C0103: Constant name "encoded" doesn't conform to UPPER_CASE naming style (invalid-name)<br>
+                                <strong>Converterd to uppercase</strong><br><br>
+                                pylintTest.py:21:20: C0103: Constant name "encoded" doesn't conform to UPPER_CASE naming style (invalid-name)<br>
+                                <strong>Converterd to uppercase</strong><br><br>
+                                pylintTest.py:23:20: C0103: Constant name "x" doesn't conform to UPPER_CASE naming style (invalid-name)
+                                <strong>Converterd to uppercase</strong><br><br>
+                                pylintTest.py:24:20: C0103: Constant name "encoded" doesn't conform to UPPER_CASE naming style (invalid-name)<br>
+                                <strong>Converterd to uppercase</strong><br><br>
+
+                                <strong>New Pylint Report</strong><br>
+                                Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+                                <br><br>
+                                <strong>Fixed code</strong><br><br>
+
+                                """<br>
+                                Text docstring<br>
+                                """<br><br>
+                                # SOURCE OF CODE: https://docs.pylint.org/en/1.6.0/tutorial.html<br><br>
+
+                                import string<br><br>
+
+                                SHIFT = 3<br>
+                                choice = input("would you like to encode or decode?")<br>
+                                word = input("Please enter text")<br>
+                                LETTERS = string.ascii_letters + string.punctuation + string.digits<br>
+                                ENCODED = ''<br>
+                                if choice == "encode":<br>
+                                    for letter in word:<br>
+                                    &nbsp;&nbsp;&nbsp;if letter == ' ':<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ENCODED = ENCODED + ' '<br>
+                                    &nbsp;&nbsp;&nbsp;else:<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X = LETTERS.index(letter) + SHIFT<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ENCODED = ENCODED + LETTERS[X]<br>
+                                    &nbsp;&nbsp;&nbsp;if choice == "decode":<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for letter in word:<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if letter == ' ':<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ENCODED = ENCODED + ' '<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X = LETTERS.index(letter) - SHIFT<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ENCODED = ENCODED + LETTERS[X]<br><br>
+
+                                print (ENCODED)
+
+
+                            </code>
+                        </div>
+
+                    </div>
+
+                    <div class="skills_holder">
+                        <p><strong>Question 3</strong><br><br>
+
+                            <strong>Run flake8 on pylintTest.py</strong><br><br>
+
+                            Review the errors returned. In what way does this error message differ from the error
+                            message returned by pylint?<br><br>
+
+                            Some syntax errors are not shown. For example, the missing parenthesis or the unnecessary
+                            parenthesis errors.<br><br>
+                            Different way of advising about indentation errors. Pylint provides more detailed
+                            information on the correct indentation required. Flake8 only makes reference to the
+                            multiplicity needed.<br><br>
+                            Pylint reports the upper-case standard for naming constants. Flake8 does not consider this
+                            as errors.
+                            <br><br>
+                            <strong>Run flake8 on metricTest.py.</strong><br><br>
+                            Can you correct each of the errors returned by flake8?<br><br>
+                            Not able to correct the error on line 37 (E128 continuation line under-indented for visual
+                            indent).
+                            <br><br>
+                            What amendments have you made to the code?
+
+                        <div class="code-wrapper">
+                            <code>
+
+                                <strong>LIST OF REPORTED ERRORS.</strong><br><br>
+                                metricTest.py:2:1: E265 block comment should start with '# '<br>
+                                <strong>Block comment in separated lines</strong><br><br>
+                                metricTest.py:2:48: W291 trailing whitespace<br>
+                                <strong>White space at the end of line was deleted</strong><br><br>
+                                metricTest.py:16:1: E112 expected an indented block<br>
+                                <strong>Indentation applied</strong><br><br>
+                                metricTest.py:20:1: E128 continuation line under-indented for visual indent<br>
+                                <strong>Parameters are shown in different lines.</strong><br><br>
+                                metricTest.py:23:1: E112 expected an indented block<br>
+                                <strong>Comment line is now aligned to the below line of code</strong><br><br>
+                                metricTest.py:27:8: E225 missing whitespace around operator<br>
+                                <strong>Added spaces around the operator</strong><br><br>
+                                metricTest.py:34:3: E261 at least two spaces before inline comment<br>
+                                <strong>Spaces added</strong><br><br>
+                                metricTest.py:34:80: E501 line too long (83 > 79 characters)<br>
+                                <strong>Comment in two lines</strong><br><br>
+                                metricTest.py:35:2: E201 whitespace after '['<br>
+                                <strong>Whitespace added</strong><br><br>
+                                metricTest.py:35:5: E202 whitespace before ']'<br>
+                                <strong>Whitespace added</strong><br><br>
+                                metricTest.py:36:8: E225 missing whitespace around operator<br>
+                                <strong>Whitespaces added</strong><br><br>
+                                metricTest.py:39:22: E231 missing whitespace after ','<br>
+                                <strong>Added spaces after comma</strong><br><br>
+                                metricTest.py:43:1: E128 continuation line under-indented for visual indent<br>
+                                <strong>Parameters shown in different lines</strong><br><br>
+                                metricTest.py:63:13: E225 missing whitespace around operator<br>
+                                <strong>Whitespaces added</strong>
+
+                                
+
+                            </code>
+                        </div>
+
+                    </div>
+
+                    <div class="skills_holder">
+                        <p><strong>Activity</strong><br><br>
+
+                            Select one or more of the tools installed above and use it/them to test the code your team
+                            has created as part of the summative assessment. You should demonstrate your tests (and
+                            share your results) during the Seminar. Discuss the need to change the code based on the
+                            output from the test tools/linters.
+                        </p>
+
+                        <p><strong>Running Pylint on the dbmanager.py file at early stage of development</strong></p>
+
+                        <div class="code-wrapper">
+                            <code>
+                                import sys<br>
+                                import os<br>
+                                import sqlite3<br><br>
+
+                                # Connect to SQL database or create database if it doesn't exist<br>
+                                class DBManager():<br>
+                                &nbsp;&nbsp;&nbsp;"""sqlite3 database class to manage db operations"""  <br>
+                                &nbsp;&nbsp;&nbsp;pass<br><br>
+
+                                &nbsp;&nbsp;&nbsp;def __init__(self, db_path='data/securespace.db'):<br><br>
+                                    
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__db_connection = sqlite3.connect(db_path)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__db_connection.row_factory = sqlite3.Row # associative array<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__db_cursor = self.__db_connection.cursor()<br><br>
+                                        
+                                &nbsp;&nbsp;&nbsp;def __del__(self):<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__db_connection.close() <br><br>   
+
+                                &nbsp;&nbsp;&nbsp;# where is a tuple<br>
+                                &nbsp;&nbsp;&nbsp;def do_select( self, query, where = () ):<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if where:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__db_cursor.execute( query, where )   <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__db_cursor.execute( query )<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.__db_cursor.fetchall()      <br><br>  
+                                        
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except sqlite3.DatabaseError as e:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Error: %s" % (e.args[0]))<br><br>
+                                    
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# where is a tuple<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def do_update( self, query, where = (), dry = True ):<br><br>
+                                        
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if where:      <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__db_cursor.execute( query, where )  <br>     
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not dry:         <br>           
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; self.__db_connection.commit()<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return True<br><br>
+                                            
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except sqlite3.DatabaseError as e:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print("Error: %s" % (e.args[0]))  <br><br>  
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# No data passed<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return False<br><br>       
+                                    
+                                &nbsp;&nbsp;&nbsp;# where is a list of tuples<br>
+                                &nbsp;&nbsp;&nbsp;# we need to return the id of the inserted row<br>
+                                &nbsp;&nbsp;&nbsp;def do_insert( self, query, row = (), dry=True ):<br><br>
+                                    
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if row:      <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__db_cursor.execute( query, row )  <br>     
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not dry:                    
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__db_connection.commit()<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.__db_cursor.lastrowid       <br><br>         
+                                            
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except sqlite3.DatabaseError as e:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Error: %s" % (e.args[0]))   <br> <br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# No data passed<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return False<br><br>
+                                        
+                                &nbsp;&nbsp;&nbsp;# where is a tuple<br>
+                                &nbsp;&nbsp;&nbsp;# delete returns void<br>
+                                &nbsp;&nbsp;&nbsp;def do_delete( self, query, where = (), dry=True ):<br><br>
+                                        
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if where: <br>     
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try: <br>        
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__db_cursor.execute( query, where )    <br>   
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not dry:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__db_connection.commit()<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return True<br><br>
+                                            
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except sqlite3.DatabaseError as e:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Error: %s" % (e.args[0])) <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# No data passed  <br>    
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return False
+                                </code>
+
+                            <code><br><br>
+                                <strong>Sample autput</strong><br><br>
+                                    seeder.py:41:9: E128 continuation line under-indented for visual indent<br>
+                                    seeder.py:41:12: E231 missing whitespace after ':'<br>
+                                    seeder.py:41:28: W291 trailing whitespace<br>
+                                    seeder.py:42:5: E124 closing bracket does not match visual indentation<br>
+                                    seeder.py:46:35: W291 trailing whitespace<br>
+                                    seeder.py:47:29: W291 trailing whitespace<br>
+                                    seeder.py:48:41: W291 trailing whitespace<br>
+                                    seeder.py:51:24: E201 whitespace after '('<br>
+                                    seeder.py:51:29: E202 whitespace before ')'<br>
+                                    seeder.py:55:44: W291 trailing whitespace<br>
+                                    seeder.py:58:37: W291 trailing whitespace<br>
+                                    seeder.py:62:20: E201 whitespace after '('<br><br>
+
+                                    <strong>We can see a long list of formatting suggestions that will be addressed in the new version of the file.</strong>
+
+
+                            </code>
+
+                            <code>
+
+                                <br><br><br>
+
+                                """Connect to SQL database or create database if it doesn't exist"""<br>
+                                import sqlite3<br><br>
+
+                                class DBManager():<br>
+                                &nbsp;&nbsp;&nbsp;"""sqlite3 database class to manage db operations"""<br>
+                                &nbsp;&nbsp;&nbsp;def __init__(self, db_path='data/securespace.db'):<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__db_connection = sqlite3.connect(db_path)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__db_connection.row_factory = sqlite3.Row # associative array<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__db_cursor = self.__db_connection.cursor()<br><br>
+
+                                &nbsp;&nbsp;&nbsp;def __del__(self):<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__db_connection.close()<br><br>
+
+                                &nbsp;&nbsp;&nbsp;# where is a tuple<br>
+                                &nbsp;&nbsp;&nbsp;def do_select(self, query, where = ()):<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""Select from database"""<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if where:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__db_cursor.execute(query, where)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__db_cursor.execute(query)<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.__db_cursor.fetchall()<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except sqlite3.DatabaseError as event:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f"{'Error: %s'}{(event.args[0])}")<br><br>
+
+                                &nbsp;&nbsp;&nbsp;# where is a tuple<br>
+                                &nbsp;&nbsp;&nbsp;def do_update(self, query, where = (), dry = True):<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""Update from database"""<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if where:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__db_cursor.execute(query, where)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not dry:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__db_connection.commit()<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return True<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except sqlite3.DatabaseError as event:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f"{'Error: %s'}{(event.args[0])}")<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# No data passed<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return False<br><br>
+
+                                &nbsp;&nbsp;&nbsp;# where is a list of tuples<br>
+                                &nbsp;&nbsp;&nbsp;# we need to return the id of the inserted row<br>
+                                &nbsp;&nbsp;&nbsp;def do_insert(self, query, row = (), dry=True):<br>
+                                &nbsp;&nbsp;&nbsp;"""Select to database"""<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if row:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__db_cursor.execute(query, row)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not dry:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__db_connection.commit()<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.__db_cursor.lastrowid<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except sqlite3.DatabaseError as event:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f"{'Error: %s'}{(event.args[0])}")<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# No data passed<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return False<br><br>
+
+                                &nbsp;&nbsp;&nbsp;# where is a tuple<br>
+                                &nbsp;&nbsp;&nbsp;# delete returns void<br>
+                                &nbsp;&nbsp;&nbsp;def do_delete(self, query, where = (), dry=True):<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""Delete from database"""<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if where:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__db_cursor.execute(query, where)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not dry:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__db_connection.commit()<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return True<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except sqlite3.DatabaseError as event:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f"{'Error: %s'}{(event.args[0])}")<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# No data passed<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return False<br><br>
+
+                            </code>
+
+                            <p>For this particular case, Pylint remarked some errors but most of the output items were
+                                suggestions in terms of consistency and trailing whitespaces. The changes to the code
+                                had to be done to keep the system uniform so other programmers could quickly understand
+                                the logic and could start adding more functionality to the solution.</p>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+
+            </section>
+        </div>
+
+
+        <footer id="footer" class="grey">
+            <div class="footer-content">
+                <ul class="social">
+                    <li class="email"><a href="#">Email</a></li>
+                    <li class="facebook"><a href="#">Facebook</a></li>
+                    <li class="google"><a href="#">Google+</a></li>
+                    <li class="twitter"><a href="#">Twitter</a></li>
+                    <li class="pinterest"><a href="#">Pinterest</a></li>
+                </ul>
+                <p class="copy">Copyright 2022 Tomas Mestanza. All rights reserved. | Template by <a
+                        href="https://www.themezy.com" target="_blank">Themezy</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/cells-by-row.js"></script>
+    <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
