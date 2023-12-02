@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]> <html class="oldie" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Tomas Mestanza</title>
+    <link rel="stylesheet" href="/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/screen.css" />
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div id="wrapper" class="inner">
+        <div class="wrapper-holder">
+            <header id="header">
+                <a class="menu_trigger" href="#">menu</a>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+
+
+                        <li><a href="/Contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="wrapper-holder white">
+            <section id="main">
+                <a class="breadcrums" href="index.html">Software Engineering Project Management</a>
+
+                <h2>Estimating, Planning and Risk</h2>
+
+
+
+                <div class="skills_holder">
+                    <hr>
+                </div>
+
+                <div class="skills_holder">
+
+                    <h3 class="bold-h3">
+                        Reading Notes on Estimating Planning and Risk
+                    </h3>
+
+                    <p><strong>Estimation</strong></p>
+
+                    <p>The Mythical Man Months, a book by Brooks (1975), provided a first study on project estimation.
+                        This book provides the following ecquation.
+                    </p>
+
+                    <p>
+                        <strong>TC = Tp+Td+Tt+Ts</strong><br><br>
+
+                        T is the total time allowed for the project
+                    </p>
+                    <ul class="list">
+                        <li>Tc = Time to complete the project.</li>
+                        <li>Tp = Planning time (T/3).</li>
+                        <li>Td = development time (T/6).</li>
+                        <li>Tt = Testing time (T/6).</li>
+                        <li>Ts = System test time (T/4).</li>
+                    </ul>
+                    <br>
+                    <p>Brooks (1975) also provides other 2 equations</p>
+
+                    <ul class="list">
+                        <li>Tc = MMn/N+(MMc/2)*N - Shows the time to completion equation, based on MMc = average no. of
+                            months effort per (programming) pair, MMn = no. of months effort required without
+                            communications
+                            overhead. This equation assumes you already know the number of developers (N) you will
+                            employ.</li>
+                        <li>Nopt = 1.41*(MMn/MMc)½ - To calculate the optimum number of developers, use this equation.
+                        </li>
+                    </ul>
+
+                    <br>
+
+                    <p><u>COCOMO</u></p>
+                    <p>Constructive Cost Model by Boehm (1981), it is based in number of lines of code</p>
+
+                    <p>Presents 3 categories</p>
+
+                    <p>Organic, semi detached , and embedded</p>
+
+                    <p><strong>Organic: </strong>Small teams, in-house, work on well defined projects<br>
+                        <strong>Semi detached:</strong> Depending on complexity or approach, it is intermediate to
+                        organic and embedded.<br>
+                        <strong>Embedded: </strong>Software and hardware complexity, operates within defined constraints
+                    </p>
+
+                    <p>COCOMO is rarely used today.</p>
+
+                    <p><u>Expert Judgement method</u></p>
+
+                    <p>By far the most used estimation method. Based on previous experience, they produce estimates.</p>
+                    <p>
+                        For new projects, it assumes an in-house set of developers, as well as the similarity with
+                        previous
+                        projects and how successful the previous project was. </p>
+
+
+                    <p><strong>Risk Management Frameworks</strong></p>
+
+                    <p>
+
+                        Open FAIR - a framework produced by the Open Group<br>
+                        The Operationally Critical Threat, Asset and Vulnerability Evaluation (OCTAVE). Framework
+                        standard created at Carnegie Mellon University
+                        (CMU)</p>
+
+
+                    <p><u>The Process to Manage Risk</u></p>
+
+                    <p>Campbell (2016) recommends the production of a risk register that collects and collates risks
+                        from
+                        as wide a variety of sources as possible, such as gathering data from:</p>
+
+                    <ul class="list">
+                        <li>Risk notification mailboxes (will need to be qualified and quantified)</li>
+                        <li>Threat workshops</li>
+                        <li>Business impact assessments</li>
+                        <li>Gap analysis</li>
+                        <li>Security audits</li>
+                    </ul>
+                    <br>
+                    <p>
+                        After gathering risks, the next step is to analyse them. I understand that quantitative
+                        assessment
+                        could ignore risks that can not be quantified
+                        due to their subjective nature. So, both types of assessments are required. Qualitative (minor.
+                        Medium, major)</p>
+
+                    <p>After analysis, the next phase is the risk mitigation. This is where each Risk is classified as
+                        being in one of four categories:</p>
+
+                    <p><strong>Eliminate</strong>(i.e. should it be removed or avoided altogether).</p>
+
+                    <p><strong>Tolerate</strong> (where Risk is recorded but no other action is taken, usually due to a
+                        cost-benefit
+                        analysis).</p>
+
+                    <p><strong>Reduce</strong> (where the impact of a risk is minimised by preventative action).</p>
+
+                    <p><strong>Transfer</strong> (where the cost of mitigation and or impact of a risk is shared between
+                        multiple
+                        stakeholders).</p>
+
+                    <p>Once a risk has been classified, there are a number of mitigation mechanisms available.
+                        Primarily,
+                        these consist of the following:</p>
+
+                    <p> Physical controls (CCTV), procedural controls (training), and technical controls (firewalls).
+                        These
+                        three all together can make Preventative Controls.</p>
+
+
+
+
+
+
+
+                    <p><strong>References</strong><br><br>
+
+
+                        Brooks, F.P. (1975) The Mythical Man-Month - Essays in Software Engineering (Anniversary
+                        Edition). Addison- Wesley.<br><br>
+                        Campbell, T. (2016). Practical Information Security Management. 1st ed. APRESS.
+
+                    </p>
+
+                </div>
+
+
+
+
+            </section>
+        </div>
+
+
+        <footer id="footer" class="grey">
+            <div class="footer-content">
+                <ul class="social">
+                    <li class="email"><a href="#">Email</a></li>
+                    <li class="facebook"><a href="#">Facebook</a></li>
+                    <li class="google"><a href="#">Google+</a></li>
+                    <li class="twitter"><a href="#">Twitter</a></li>
+                    <li class="pinterest"><a href="#">Pinterest</a></li>
+                </ul>
+                <p class="copy">Copyright 2022 Tomas Mestanza. All rights reserved. | Template by <a
+                        href="https://www.themezy.com" target="_blank">Themezy</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/cells-by-row.js"></script>
+    <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
