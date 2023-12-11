@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]> <html class="oldie" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Tomas Mestanza</title>
+    <link rel="stylesheet" href="/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/screen.css" />
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div id="wrapper" class="inner">
+        <div class="wrapper-holder">
+            <header id="header">
+                <a class="menu_trigger" href="#">menu</a>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+
+
+                        <li><a href="/Contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="wrapper-holder white">
+            <section id="main">
+                <a class="breadcrums" href="index.html">Software Engineering Project Management</a>
+
+                <h2>Quality Management Strategy</h2>
+
+
+                <div class="skills_holder">
+                    <h3 class="bold-h3">e-Portfolio Activity: Improving Code Quality. Refer to the Mertz (2019)
+                        resource. Use some Python code which you have developed in the past and apply at least 3 of the
+                        strategies presented at the source to improve its quality.
+                    </h3>
+
+                    <p>
+                        For this exercise, I will use a project I wrote in the first module of this course. Using
+                        Pylint, Flake8 on VScode,
+                        I will apply the three recommendations stated by Mertz (2019).
+                    </p>
+
+                    <p>Part 1</p>
+                    <p>After running Pylint on the python file, several suggestions were listed, including unnecessary
+                        elses, variables that didn't comply with the snake_case naming style, unused variables,
+                        importing libraries that should be at the top of the script, etc.</p>
+
+                    <p>
+                        <img src="../images/module5/initial-pylint-run.png">
+                    </p>
+                    <p>After applying the recommendations from Pylint, the file looks like the below image.</p>
+                    <p>
+                        <img src="../images/module5/after-pylint.png">
+                    </p>
+
+                    <p>After running using flake8, the errors were more specific and more strict. Block comments should
+                        start with '#', at least two spaces before the inline comment, line too long (80 > 79
+                        characters), expected
+                        two blank lines, etc.</p>
+
+                    <p>All of these recommendations were applied and the file looked like the below image.</p>
+
+                    <p>
+                        <img src="../images/module5/after-flake8.png">
+                    </p>
+
+                    <p>Automated tools allow us to write clean code, respecting the standards and complying with best
+                        coding practices.</p>
+
+                    <p><strong>Part 2</strong></p>
+                    <p>Docstring and comment formatting were applied in the previous step as part of applying flake8.
+                    </p>
+
+
+                    <p><strong>Part 3</strong></p>
+
+                    <p>For this simple project, I have structured the files as shown in the screenshot below. A test
+                        file and a readme file were added.</p>
+
+                    <p>
+                        <img src="../images/module5/structure.png">
+                    </p>
+
+
+                    <p><strong>References</strong><br><br>
+
+                        Mertz, J. (2019) Writing Clean and Pythonic Code. Available From:
+                        https://docslib.org/doc/9751240/writing-clean-and-pythonic-code [Accessed 14 November 2023]
+                    </p>
+                </div>
+
+                <div class="skills_holder">
+                    <hr>
+                </div>
+
+                <div class="skills_holder">
+                    <h3 class="bold-h3">Reading notes on Quality Project Management Strategy
+                    </h3>
+
+                    <p>The IEEE defines Quality as the group of characteristics of a product or service that
+                        represents
+                        its ability to satisfy a specific need. </p>
+
+                    <p>A quantitative measure of an attribute that affects software quality is called a quality metric.
+                    </p>
+
+                    <p>The achievement of levels of quality is the responsibility of the project manager.</p>
+
+                    <p>The additional work that has to be done due to taking a shortcut solution is called technical
+                        debt.</p>
+
+                    <p>Time cost and quality are the constraints to take into account (triple constraints)</p>
+
+                    <p><strong>PMI</strong></p>
+
+                    <p>A situation of a quality output that avoids the technical debt within the triple constraints
+                        needs
+                        monitoring to achieve quality metrics that can allow the application of corrective actions if
+                        needed.</p>
+
+                    <p>As quality is relative, the attributes and ways to measure the quality have to be previously
+                        agreed
+                        upon with the client to apply tests that can indicate that the quality has been achieved.</p>
+
+                    <p>According to PMI, quality management has three perspectives: quality planning, quality assurance,
+                        and quality control.</p>
+
+                    <p>Quality planning. During the quality planning stage, identify the appropriate quality metrics.
+                    </p>
+
+                    <p>Quality assurance. Monitor all processes, methods and activities and ensure they comply with the
+                        defined standards.</p>
+
+                    <p>Quality control. Activities to evaluate if the product meets the quality requirements. Validate
+                        the deliverables and satisfy the stakeholder's quality requirements.</p>
+
+
+                    <p><strong>ISO/IEC 25010</strong></p>
+
+                    <p>This standard includes six characteristics of quality (recommendation 9126): functionality,
+                        reliability, effectiveness, usability, maintainability and portability.</p>
+
+                    <p>In recommendation 25010, ISO / IEC includes eight characteristics of quality. Functional
+                        Suitability, performance efficiency, compatibility, usability, reliability, security,
+                        maintainability and portability.</p>
+
+                    <p><strong>Quality Management Models</strong></p>
+
+                    <p>The quality management model by McAll (1977) includes eleven characteristics. Integrity,
+                        reliability, usability, accuracy, efficiency, maintainability, testability, flexibility,
+                        interoperability, reusability and portability. The matrix considered by this author includes
+                        product
+                        revision (testing), product transition (adaptation to changes) and product operations (user
+                        experience).</p>
+
+
+
+
+                </div>
+
+                <div class="skills_holder">
+                    <hr>
+                </div>
+
+                <div class="skills_holder">
+                    <h3 class="bold-h3">Activity
+                    </h3>
+
+                    <p>
+                        <strong>
+                            Please answer the following questions:
+
+
+                        </strong>
+                    </p>
+
+                    <p> Why do you think that so many frameworks have evolved around the concept of quality metric
+                        definition?</p>
+
+                    <p>As the quality can be relative, the models evolve to cover the relativity and the dynamism of the
+                        characteristics that define quality. Measuring the quality is the ultimate way of determining if
+                        the
+                        quality of the product or service matches the expectations of the stakeholders. This way, the
+                        models
+                        can be more precise and help managers manage the quality of a project more accurately.</p>
+
+                    <p>Which one is the current one?</p>
+
+                    <p>As it is constantly updated, the EFQM is the currently most recognised management framework to
+                        support quality (EFQM, N.D.).</p>
+
+                    <p>Which one(s) is applicable to agile methodologies?</p>
+
+                    <p>EFQM allows the continuation of Agile practices, as the processes are continuously analysed and
+                        optimised (Mooncamp, 2022). Agile can also integrate into ISO 9001.</p>
+
+                    <p>Which one do you consider to be the most suitable, and why?</p>
+                    <p>EFQM is globally recognised; its newest version is 2020, which means it is permanently updated.
+                        It
+                        is based on five enablers that are very important: leadership, policy and strategy, people,
+                        partnership and resources, and processes. It is based on simple but powerful logic. It allows us
+                        to
+                        drive performance and, at the same time, remain agile, adaptive and able to evolve (EFQM, N.D.).
+                    </p>
+
+                    <p>
+                        <strong>References</strong><br><br>
+
+                        EFQM (N.D.) The EFQM Model. Available from: https://efqm.org/the-efqm-model/ [Accessed 15
+                        November 2023].<br><br>
+
+                        Mooncamp (2022) Understanding the EFQM model: A comprehensive management system with focus on
+                        quality. Available from: https://mooncamp.com/blog/efqm-model/ [Accessed 15 November 2023].
+
+                    </p>
+
+                </div>
+
+
+            </section>
+        </div>
+
+
+        <footer id="footer" class="grey">
+            <div class="footer-content">
+                <ul class="social">
+                    <li class="email"><a href="#">Email</a></li>
+                    <li class="facebook"><a href="#">Facebook</a></li>
+                    <li class="google"><a href="#">Google+</a></li>
+                    <li class="twitter"><a href="#">Twitter</a></li>
+                    <li class="pinterest"><a href="#">Pinterest</a></li>
+                </ul>
+                <p class="copy">Copyright 2022 Tomas Mestanza. All rights reserved. | Template by <a
+                        href="https://www.themezy.com" target="_blank">Themezy</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/cells-by-row.js"></script>
+    <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

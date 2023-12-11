@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]> <html class="oldie" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Tomas Mestanza</title>
+    <link rel="stylesheet" href="/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/screen.css" />
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div id="wrapper" class="inner">
+        <div class="wrapper-holder">
+            <header id="header">
+                <a class="menu_trigger" href="#">menu</a>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+
+
+                        <li><a href="/Contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="wrapper-holder white">
+            <section id="main">
+                <a class="breadcrums" href="index.html">Software Engineering Project Management</a>
+
+                <h2>Software Quality Monitoring in Python</h2>
+                <!-- 
+                <div class="skills_holder">
+                    <h3 class="bold-h3">Collaborative Discussion: Response to Peer (Nasser Al-Naimi)
+                    </h3>
+
+                    <p>Thank you for your post.</p>
+                    <p>I agree with your point about the interconnectivity of the causes of project failure, and this
+                        interconnectivity can also be used to apply improvements or prevention measures that can affect
+                        different potential causes simultaneously.</p>
+
+                    <p>I wanted to add that although I agree with the importance of the environmental variables that can
+                        affect the success of a project, focusing on the prevention of project failure, it is also
+                        essential
+                        to consider that environmental causes (factors) will also depend on the type of project. The
+                        implementation of the projects will be affected by environmental causes (Kipkemoi, 2018). It is
+                        essential to differentiate the potential causes of failure according to their type so project
+                        managers can concentrate on dealing with the causes that could affect the project most.</p>
+
+                    <p>References<br><br>
+
+                        Kipkemoi, B. (2018) Why Projects Fail. Project Management Journal. 1(1000):7.
+                        https://www.researchgate.net/publication/326683611_Why_Projects_Fail
+
+                    </p>
+                </div>
+
+                <div class="skills_holder">
+                    <hr>
+                </div> -->
+
+                <div class="skills_holder">
+
+                    <h3 class="bold-h3">
+                        Copy the following Python code into a file named code_with_lint.py:
+                    </h3>
+
+                    <div class="code-wrapper">
+                        <code><p>
+
+                            import io<br>
+from math import *<br><br><br>
+
+
+from time import time<br><br>
+
+some_global_var = 'GLOBAL VAR NAMES SHOULD BE IN ALL_CAPS_WITH_UNDERSCOES'<br><br>
+
+def multiply(x, y):<br>
+&nbsp;&nbsp;&nbsp;"""<br>
+&nbsp;&nbsp;&nbsp;This returns the result of a multiplation of the inputs<br>
+&nbsp;&nbsp;&nbsp;"""<br>
+&nbsp;&nbsp;&nbsp;some_global_var = 'this is actually a local variable...'<br>
+&nbsp;&nbsp;&nbsp;result = x* y<br>
+&nbsp;&nbsp;&nbsp;return result<br>
+&nbsp;&nbsp;&nbsp;if result == 777:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("jackpot!")<br><br>
+
+def is_sum_lucky(x, y):<br>
+&nbsp;&nbsp;&nbsp;"""This returns a string describing whether or not the sum of input is lucky<br>
+&nbsp;&nbsp;&nbsp;This function first makes sure the inputs are valid and then calculates the<br>
+&nbsp;&nbsp;&nbsp;sum. Then, it will determine a message to return based on whether or not<br>
+&nbsp;&nbsp;&nbsp;that sum should be considered "lucky"<br>
+&nbsp;&nbsp;&nbsp;"""<br>
+&nbsp;&nbsp;&nbsp;if x != None:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if y is not None:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result = x+y;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if result == 7:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 'a lucky number!'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return( 'an unlucky number!')<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return ('just a normal number')<br><br>
+
+class SomeClass:<br><br>
+
+&nbsp;&nbsp;&nbsp;def __init__(self, some_arg,  some_other_arg, verbose = False):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.some_other_arg  =  some_other_arg<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.some_arg        =  some_arg<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list_comprehension = [((100/value)*pi) for value in some_arg if value != 0]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time = time()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from datetime import datetime<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date_and_time = datetime.now()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return<br><br>
+
+                        </p>
+                        </code>
+                    </div>
+                    <br><br>
+                    <p><strong>
+                            Now run the code against a variety of linters to test the code quality:<br>
+
+                            <ul class="list">
+                                <li>pylint code_with_lint.py</li>
+                                <li>pyflakes code_with_lint.py</li>
+                                <li>pycodestyle code_with_lint.py</li>
+                                <li>pydocstyle code_with_lint.py</li>
+                            </ul>
+                        </strong></p>
+
+                    <div class="code-wrapper">
+                        <code><p><strong>Pylint</strong><br><br>                       
+
+                            code_with_lint.py:27:0: W0301: Unnecessary semicolon (unnecessary-semicolon)<br>
+                            code_with_lint.py:31:0: C0325: Unnecessary parens after 'return' keyword (superfluous-parens)<br>
+                            code_with_lint.py:33:0: C0325: Unnecessary parens after 'return' keyword (superfluous-parens)<br>
+                            code_with_lint.py:44:0: C0304: Final newline missing (missing-final-newline)<br>
+                            code_with_lint.py:1:0: C0114: Missing module docstring (missing-module-docstring)<br>
+                            code_with_lint.py:2:0: W0622: Redefining built-in 'pow' (redefined-builtin)<br>
+                            code_with_lint.py:2:0: W0401: Wildcard import math (wildcard-import)<br>
+                            code_with_lint.py:7:0: C0103: Constant name "some_global_var" doesn't conform to UPPER_CASE naming style (invalid-name)<br>
+                            code_with_lint.py:9:13: C0103: Argument name "x" doesn't conform to snake_case naming style (invalid-name)<br>
+                            code_with_lint.py:9:16: C0103: Argument name "y" doesn't conform to snake_case naming style (invalid-name)<br>
+                            code_with_lint.py:13:4: W0621: Redefining name 'some_global_var' from outer scope (line 7) (redefined-outer-name)<br>
+                            code_with_lint.py:16:4: W0101: Unreachable code (unreachable)<br>
+                            code_with_lint.py:13:4: W0612: Unused variable 'some_global_var' (unused-variable)<br>
+                            code_with_lint.py:19:17: C0103: Argument name "x" doesn't conform to snake_case naming style (invalid-name)<br>
+                            code_with_lint.py:19:20: C0103: Argument name "y" doesn't conform to snake_case naming style (invalid-name)<br>
+                            code_with_lint.py:25:7: C0121: Comparison 'x != None' should be 'x is not None' (singleton-comparison)<br>
+                            code_with_lint.py:28:12: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)<br>
+                            code_with_lint.py:19:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)<br>
+                            code_with_lint.py:35:0: C0115: Missing class docstring (missing-class-docstring)<br>
+                            code_with_lint.py:41:8: W0621: Redefining name 'time' from outer scope (line 5) (redefined-outer-name)<br>
+                            code_with_lint.py:41:15: E0601: Using variable 'time' before assignment (used-before-assignment)<br>
+                            code_with_lint.py:42:8: C0415: Import outside toplevel (datetime.datetime) (import-outside-toplevel)<br>
+                            code_with_lint.py:37:4: R1711: Useless return at end of function or method (useless-return)<br>
+                            code_with_lint.py:37:50: W0613: Unused argument 'verbose' (unused-argument)<br>
+                            code_with_lint.py:40:8: W0612: Unused variable 'list_comprehension' (unused-variable)<br>
+                            code_with_lint.py:43:8: W0612: Unused variable 'date_and_time' (unused-variable)<br>
+                            code_with_lint.py:35:0: R0903: Too few public methods (0/2) (too-few-public-methods)<br>
+                            code_with_lint.py:1:0: W0611: Unused import io (unused-import)<br>
+                            code_with_lint.py:5:0: W0611: Unused time imported from time (unused-import)<br>
+                            code_with_lint.py:2:0: W0614: Unused import(s) acos, acosh, asin, asinh, atan, atan2, atanh, ceil, comb, copysign, cos, cosh, degrees, dist, e, erf, erfc, exp, expm1, fabs, factorial, floor, fmod, frexp, fsum, gamma, gcd, hypot, inf, isclose, isfinite, isinf, isnan, isqrt, lcm, ldexp, lgamma, log, log10, log1p, log2, modf, nan, nextafter, perm, pow, prod, radians, remainder, sin, sinh, sqrt, tan, tanh, tau, trunc and ulp from wildcard import of math (unused-wildcard-import)<br>
+
+
+                          
+                        </p>
+                        </code>
+                    </div>
+                    <br><br>
+                    <div class="code-wrapper">
+                        <code><p><strong>Pyflake</strong><br><br>
+
+                            code_with_lint.py:1:1: 'io' imported but unused<br>
+                            code_with_lint.py:2:1: 'from math import *' used; unable to detect undefined names<br>
+                            code_with_lint.py:13:5: local variable 'some_global_var' is assigned to but never used<br>
+                            code_with_lint.py:40:44: 'pi' may be undefined, or defined from star imports: math<br>
+                            code_with_lint.py:40:9: local variable 'list_comprehension' is assigned to but never used<br>
+                            code_with_lint.py:41:16: local variable 'time' defined in enclosing scope on line 5 referenced before assignment<br>
+                            code_with_lint.py:41:9: local variable 'time' is assigned to but never used<br>
+                            code_with_lint.py:43:9: local variable 'date_and_time' is assigned to but never used<br></p>
+                        </code>
+                    </div>
+                    <br><br>
+                    <div class="code-wrapper">
+                        <code><p><strong>Pycodestyle</strong><br><br>
+
+                            code_with_lint.py:9:1: E302 expected 2 blank lines, found 1<br>
+                            code_with_lint.py:14:15: E225 missing whitespace around operator<br>
+                            code_with_lint.py:19:1: E302 expected 2 blank lines, found 1<br>
+                            code_with_lint.py:20:80: E501 line too long (80 > 79 characters)<br>
+                            code_with_lint.py:25:10: E711 comparison to None should be 'if cond is not None:'<br>
+                            code_with_lint.py:27:25: E703 statement ends with a semicolon<br>
+                            code_with_lint.py:31:23: E275 missing whitespace after keyword<br>
+                            code_with_lint.py:31:24: E201 whitespace after '('<br>
+                            code_with_lint.py:35:1: E302 expected 2 blank lines, found 1<br>
+                            code_with_lint.py:37:58: E251 unexpected spaces around keyword / parameter equals<br>
+                            code_with_lint.py:37:60: E251 unexpected spaces around keyword / parameter equals<br>
+                            code_with_lint.py:38:28: E221 multiple spaces before operator<br>
+                            code_with_lint.py:38:31: E222 multiple spaces after operator<br>
+                            code_with_lint.py:39:22: E221 multiple spaces before operator<br>
+                            code_with_lint.py:39:31: E222 multiple spaces after operator<br>
+                            code_with_lint.py:40:80: E501 line too long (83 > 79 characters)<br>
+                            code_with_lint.py:44:15: W292 no newline at end of file<br></p>
+                        </code>
+                    </div>
+
+                    <br><br>
+                    <div class="code-wrapper">
+                        <code><p><strong>Pydocstyle</strong><br><br>
+
+                            code_with_lint.py:1 at module level:<br>
+                            &nbsp;&nbsp;&nbsp;D100: Missing docstring in public module<br>
+                            code_with_lint.py:10 in public function `multiply`:<br>
+                            &nbsp;&nbsp;&nbsp;D200: One-line docstring should fit on one line with quotes (found 3)<br>
+                            code_with_lint.py:10 in public function `multiply`:<br>
+                            &nbsp;&nbsp;&nbsp;D400: First line should end with a period (not 's')<br>
+                            code_with_lint.py:10 in public function `multiply`:<br>
+                            &nbsp;&nbsp;&nbsp;D401: First line should be in imperative mood; try rephrasing (found 'This')<br>
+                            code_with_lint.py:20 in public function `is_sum_lucky`:<br>
+                            &nbsp;&nbsp;&nbsp;D205: 1 blank line required between summary line and description (found 0)<br>
+                            code_with_lint.py:20 in public function `is_sum_lucky`:<br>
+                            &nbsp;&nbsp;&nbsp;D400: First line should end with a period (not 'y')<br>
+                            code_with_lint.py:20 in public function `is_sum_lucky`:<br>
+                            &nbsp;&nbsp;&nbsp;D401: First line should be in imperative mood; try rephrasing (found 'This')<br>
+                            code_with_lint.py:35 in public class `SomeClass`:<br>
+                            &nbsp;&nbsp;&nbsp;D101: Missing docstring in public class<br>
+                            code_with_lint.py:37 in public method `__init__`:<br>
+                            &nbsp;&nbsp;&nbsp;D107: Missing docstring in __init__<br></p>
+                        </code>
+                    </div>
+
+                    <br><br>
+                    <p><strong>Compare the effectiveness of each tool in defining and identifying code quality. What can
+                            you conclude about the effectiveness of each approach?</strong><br><br>
+
+                        It is essential to mention that the checks of all tools can be set, and it will depend on the
+                        rules that are shown after the test. This test has been done with the default settings.
+                        <br><br>
+                        Pylint seems to include most of the functions in Pyflake, highlighting included libraries that
+                        are to be used. Pylint provides model details and can be very descriptive. Some of the Pylint
+                        recommendations are overly strict, as parameters defined as one character are highlighted as not
+                        compliant with the snake case convention, for example.
+                        <br><br>
+                        Pylint can also highlight some of the same issues as Pycodestyle. In terms of spaces, it gives
+                        suggestions about unnecessary brackets in if statements. Also, unnecessary semi-colons are
+                        reported with Pylint.
+                        <br><br>
+                        Pylint also reports issues with the doctoring and comments; this is a very useful feature.
+                        <br><br>
+                        To summarise, Pylint is a complete tool that, in a way, includes the functionality of all other
+                        tools. Although in some cases, Pylint gives more details, in others, it is very generic,
+                        pointing at the issue. For example, it doesn’t highlight the docstring issue in the __init__
+                        method, but this is reported with Pydocstyle. I still believe that in the absence of other
+                        tools, Pylint would be my first choice.
+                        <br><br>
+
+                    </p>
+
+                </div>
+
+
+
+
+            </section>
+        </div>
+
+
+        <footer id="footer" class="grey">
+            <div class="footer-content">
+                <ul class="social">
+                    <li class="email"><a href="#">Email</a></li>
+                    <li class="facebook"><a href="#">Facebook</a></li>
+                    <li class="google"><a href="#">Google+</a></li>
+                    <li class="twitter"><a href="#">Twitter</a></li>
+                    <li class="pinterest"><a href="#">Pinterest</a></li>
+                </ul>
+                <p class="copy">Copyright 2022 Tomas Mestanza. All rights reserved. | Template by <a
+                        href="https://www.themezy.com" target="_blank">Themezy</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/cells-by-row.js"></script>
+    <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
